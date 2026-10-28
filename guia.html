@@ -7,9 +7,14 @@
 <title>Tu perfil en tres segundos · Guía de Estela</title>
 <meta name="description" content="Guía práctica de Estela: cómo lograr que tu perfil se entienda en tres segundos.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Libre+Franklin:wght@400;500;600;700&display=swap">
+<link rel="preload" href="fuentes/libre-baskerville.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fuentes/libre-baskerville-italica.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fuentes/libre-franklin.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Libre Baskerville";font-style:normal;font-weight:400 700;font-display:swap;src:url("fuentes/libre-baskerville.woff2") format("woff2")}
+@font-face{font-family:"Libre Baskerville";font-style:italic;font-weight:400;font-display:swap;src:url("fuentes/libre-baskerville-italica.woff2") format("woff2")}
+@font-face{font-family:"Libre Franklin";font-style:normal;font-weight:100 900;font-display:swap;src:url("fuentes/libre-franklin.woff2") format("woff2")}
+</style>
 <style>
 /* Guía en diapositivas (16:9). En pantalla se ven una debajo de otra; al imprimir o exportar a PDF, una por página. */
 :root{--mar:#0A2C45;--mar-2:#103F5E;--mar-3:#061F32;--espuma:#F0F6F7;--espuma-2:#DCEAEE;--baliza:#0B7388;--luz:#62D6D0;--tinta:#0A2C45;--suave:#4A6A7C;--linea:#C3D6DC;

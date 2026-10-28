@@ -2,6 +2,11 @@
    Carta náutica de noche: el acento es la luz de la baliza.
    Tipografía clásica: Libre Baskerville (títulos) + Libre Franklin (texto y etiquetas).
    El acento cambia según el fondo con --baliza (se redefine en .oscuro). */
+/* fuentes servidas desde el propio sitio (licencia OFL), precargadas en cada página */
+@font-face{font-family:"Libre Baskerville";font-style:normal;font-weight:400 700;font-display:swap;src:url("../fuentes/libre-baskerville.woff2") format("woff2")}
+@font-face{font-family:"Libre Baskerville";font-style:italic;font-weight:400;font-display:swap;src:url("../fuentes/libre-baskerville-italica.woff2") format("woff2")}
+@font-face{font-family:"Libre Franklin";font-style:normal;font-weight:100 900;font-display:swap;src:url("../fuentes/libre-franklin.woff2") format("woff2")}
+
 :root{
   --mar:#0A2C45; --mar-2:#103F5E; --mar-3:#061F32;
   --espuma:#F0F6F7; --espuma-2:#DCEAEE;
@@ -31,9 +36,6 @@ img,svg{display:block;max-width:100%}
 .saltar{position:absolute;left:12px;top:-80px;z-index:100;background:var(--mar);color:#fff;padding:12px 16px;border-radius:10px;text-decoration:none;font-weight:600}
 .saltar:focus{top:12px}
 
-/* navegación entre páginas: la cabecera queda quieta y el contenido cambia suave */
-@view-transition{navigation:auto}
-::view-transition-old(root),::view-transition-new(root){animation-duration:.32s}
 
 /* etiquetas y botones */
 .ceja{font:600 .72rem/1.4 var(--etiqueta);letter-spacing:.16em;text-transform:uppercase;color:var(--baliza)}
@@ -55,8 +57,8 @@ img,svg{display:block;max-width:100%}
 .ola{font-style:italic;color:var(--baliza)}
 
 /* ---------- cabecera ---------- */
-.cab{position:sticky;top:0;z-index:50;height:var(--cab);background:rgba(240,246,247,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--linea);view-transition-name:cabecera}
+.cab{position:sticky;top:0;z-index:50;height:var(--cab);background:rgba(240,246,247,.97);
+  border-bottom:1px solid var(--linea)}
 .cab .ancho{height:100%;display:flex;align-items:center;gap:28px}
 .logo{display:inline-flex;align-items:center;gap:7px;font:400 1.6rem/1 var(--display);letter-spacing:-.03em;text-decoration:none;color:var(--tinta)}
 .logo svg{margin-top:4px}
@@ -182,7 +184,7 @@ img,svg{display:block;max-width:100%}
 .corriente{margin-top:52px;overflow:hidden;
   -webkit-mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
 .corriente-pista{display:flex;width:max-content;animation:corriente 52s linear infinite}
-.corriente:hover .corriente-pista,.corriente.pausa .corriente-pista{animation-play-state:paused}
+.corriente:hover .corriente-pista,.corriente.pausa .corriente-pista,.corriente.fuera .corriente-pista{animation-play-state:paused}
 .corriente-set{display:flex;gap:22px;padding-right:22px}
 @keyframes corriente{to{transform:translateX(-50%)}}
 .carta{flex:0 0 300px;border-radius:26px;padding:32px 28px 30px;display:flex;flex-direction:column;gap:14px;min-height:280px;
@@ -559,13 +561,12 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px;min-width:0}
 @media (max-width:600px){.vis{aspect-ratio:1/1;border-radius:24px}.bio-card{width:76%;padding:18px 18px}.bio-card p{font-size:.86rem}.bio-card.antes{top:9%}.bio-card.despues{bottom:9%}.vis-diag .nota{font-size:.76rem;padding:10px 11px}}
 
 /* aparición al bajar */
-.aparece{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.aparece{opacity:0;transform:translateY(12px);transition:opacity .45s var(--ease),transform .45s var(--ease)}
 .aparece.visto{opacity:1;transform:none}
 
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
-  @view-transition{navigation:none}
   .aparece{opacity:1;transform:none}
   .cartas{scroll-behavior:auto}
 }

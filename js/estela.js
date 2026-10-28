@@ -172,6 +172,7 @@
   /* ---------- cómo trabajamos: la corriente de cartas se frena un rato si la tocan ---------- */
   $$('.corriente').forEach(function (cor) {
     var t;
+    if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { cor.classList.toggle('fuera', !es[0].isIntersecting); }).observe(cor);
     cor.addEventListener('touchstart', function () { cor.classList.add('pausa'); clearTimeout(t); t = setTimeout(function () { cor.classList.remove('pausa'); }, 5000); }, { passive: true });
   });
 
