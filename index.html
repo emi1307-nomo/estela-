@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Libre+Franklin:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="css/estela.css?v=20261028a">
+<link rel="stylesheet" href="css/estela.css?v=20261028b">
 </head>
 <body>
 <a class="saltar" href="#principal">Saltar al contenido</a>
@@ -75,8 +75,17 @@
 
 <section class="seccion" id="tres-segundos">
   <div class="ancho">
-    <p class="ceja">Lo que pasa en tres segundos</p>
-    <h2 class="titulo">Tu cliente decide antes de leer tu bio.</h2>
+    <div class="tres-cab">
+      <div>
+        <p class="ceja">Lo que pasa en tres segundos</p>
+        <h2 class="titulo">Tu cliente decide antes de leer tu bio.</h2>
+        <p class="intro">Esto es lo que mira, segundo a segundo.</p>
+      </div>
+      <div class="tres-tel" aria-hidden="true">
+        <div class="telefono foco" data-perfil="ferro" data-vista="antes"></div>
+        <p class="tres-veredicto">¿Se queda o se va?</p>
+      </div>
+    </div>
     <div class="regla aparece">
       <div class="regla-linea" aria-hidden="true"><i></i></div>
       <ol class="regla-pasos">
@@ -89,36 +98,44 @@
   </div>
 </section>
 
-<section class="seccion cartas-sec">
-  <div class="ancho cartas-cab">
-    <div>
-      <p class="ceja">Cómo trabajamos</p>
-      <h2 class="titulo">Lo que no negociamos.</h2>
-    </div>
-    <div class="cartas-flechas">
-      <button class="flecha" type="button" data-dir="-1" aria-label="Carta anterior">←</button>
-      <button class="flecha" type="button" data-dir="1" aria-label="Carta siguiente">→</button>
+<section class="seccion corriente-sec">
+  <div class="ancho">
+    <p class="ceja">Cómo trabajamos</p>
+    <h2 class="titulo">Lo que no negociamos.</h2>
+  </div>
+  <!-- las cartas fluyen solas como una corriente; se frenan si pasás el mouse o las tocás -->
+  <div class="corriente" role="region" aria-label="Cómo trabajamos">
+    <div class="corriente-pista">
+      <div class="corriente-set">
+        <article class="carta"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4.5h11a2.5 2.5 0 0 1 2.5 2.5v5.5a2.5 2.5 0 0 1-2.5 2.5H9l-4 3.2V15H4a2.5 2.5 0 0 1-2.5-2.5V7A2.5 2.5 0 0 1 4 4.5Z"/><path d="M20.5 9.5a2 2 0 0 1 2 2V16a2 2 0 0 1-2 2h-.8v2.6L16.6 18H13"/></svg><h3>Cercana</h3><p>Hablás directo con quien hace el trabajo.</p></article>
+        <article class="carta"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5v4.5M12 17v4.5M2.5 12H7M17 12h4.5M5.3 5.3l3.1 3.1M15.6 15.6l3.1 3.1M5.3 18.7l3.1-3.1M15.6 8.4l3.1-3.1"/></svg><h3>Creativa</h3><p>Ideas pensadas para tu marca, no plantillas que ya vio todo el mundo.</p></article>
+        <article class="carta"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.3" fill="currentColor"/></svg><h3>Con una meta clara</h3><p>La fijamos al empezar y la seguimos en un informe de una página.</p></article>
+        <article class="carta"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg><h3>Reuniones cortas</h3><p>Veinte minutos por mes. Sin presentaciones largas.</p></article>
+        <article class="carta"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8 12.2 2.8 2.8L16.2 9"/></svg><h3>Vos decidís</h3><p>Cada publicación pasa por vos antes de salir.</p></article>
+      </div>
+      <div class="corriente-set" aria-hidden="true">
+        <article class="carta"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4.5h11a2.5 2.5 0 0 1 2.5 2.5v5.5a2.5 2.5 0 0 1-2.5 2.5H9l-4 3.2V15H4a2.5 2.5 0 0 1-2.5-2.5V7A2.5 2.5 0 0 1 4 4.5Z"/><path d="M20.5 9.5a2 2 0 0 1 2 2V16a2 2 0 0 1-2 2h-.8v2.6L16.6 18H13"/></svg><h3>Cercana</h3><p>Hablás directo con quien hace el trabajo.</p></article>
+        <article class="carta"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5v4.5M12 17v4.5M2.5 12H7M17 12h4.5M5.3 5.3l3.1 3.1M15.6 15.6l3.1 3.1M5.3 18.7l3.1-3.1M15.6 8.4l3.1-3.1"/></svg><h3>Creativa</h3><p>Ideas pensadas para tu marca, no plantillas que ya vio todo el mundo.</p></article>
+        <article class="carta"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.3" fill="currentColor"/></svg><h3>Con una meta clara</h3><p>La fijamos al empezar y la seguimos en un informe de una página.</p></article>
+        <article class="carta"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg><h3>Reuniones cortas</h3><p>Veinte minutos por mes. Sin presentaciones largas.</p></article>
+        <article class="carta"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8 12.2 2.8 2.8L16.2 9"/></svg><h3>Vos decidís</h3><p>Cada publicación pasa por vos antes de salir.</p></article>
+      </div>
     </div>
   </div>
-  <div class="cartas" tabindex="0" role="region" aria-label="Cómo trabajamos: deslizá para ver más">
-    <article class="carta"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4.5h11a2.5 2.5 0 0 1 2.5 2.5v5.5a2.5 2.5 0 0 1-2.5 2.5H9l-4 3.2V15H4a2.5 2.5 0 0 1-2.5-2.5V7A2.5 2.5 0 0 1 4 4.5Z"/><path d="M20.5 9.5a2 2 0 0 1 2 2V16a2 2 0 0 1-2 2h-.8v2.6L16.6 18H13"/></svg><h3>Cercana</h3><p>Hablás directo con quien hace el trabajo.</p></article>
-    <article class="carta"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5v4.5M12 17v4.5M2.5 12H7M17 12h4.5M5.3 5.3l3.1 3.1M15.6 15.6l3.1 3.1M5.3 18.7l3.1-3.1M15.6 8.4l3.1-3.1"/></svg><h3>Creativa</h3><p>Ideas pensadas para tu marca, no plantillas que ya vio todo el mundo.</p></article>
-    <article class="carta"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.3" fill="currentColor"/></svg><h3>Con una meta clara</h3><p>La fijamos al empezar y la seguimos en un informe de una página.</p></article>
-    <article class="carta"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg><h3>Reuniones cortas</h3><p>Veinte minutos por mes. Sin presentaciones largas.</p></article>
-    <article class="carta"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8 12.2 2.8 2.8L16.2 9"/></svg><h3>Vos decidís</h3><p>Cada publicación pasa por vos antes de salir.</p></article>
-  </div>
-  <div class="ancho"><div class="cartas-puntos" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div></div>
 </section>
 
 <section class="seccion">
   <div class="ancho">
     <p class="ceja">Servicios</p>
     <h2 class="titulo">Lo que hacemos, en orden.</h2>
-    <div class="recorrido aparece">
-      <a class="tramo" href="servicios.html#diagnostico"><span class="boya"></span><svg class="icono" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg><h3>Diagnóstico</h3><p>30 minutos mirando tu perfil.</p><span class="dato">Sin costo</span></a>
-      <a class="tramo" href="servicios.html#perfil"><span class="boya"></span><svg class="icono" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4.5"/><circle cx="12" cy="10" r="3"/><path d="M7 18.2c1.2-2.3 3-3.4 5-3.4s3.8 1.1 5 3.4"/></svg><h3>Perfil y marca</h3><p>Bio, foto, destacadas y estilo.</p><span class="dato">Desde <span data-precio="perfil">$180.000</span></span></a>
-      <a class="tramo" href="servicios.html#plan"><span class="boya"></span><svg class="icono" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16.5" rx="3"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4M7.5 13.5h3M7.5 17h6"/></svg><h3>Contenido</h3><p>Un plan mensual de publicaciones.</p><span class="dato">Desde <span data-precio="contenido">$260.000</span>/mes</span></a>
-      <a class="tramo" href="servicios.html#publicidad"><span class="boya"></span><svg class="icono" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20.5h18"/><path d="M5 16l4.5-5 3.5 3 6-7.5"/><path d="M15 6.5h4v4"/></svg><h3>Publicidad</h3><p>Anuncios y un informe claro.</p><span class="dato">Desde <span data-precio="publicidad">$120.000</span>/mes</span></a>
+    <div class="ruta aparece">
+      <svg class="ruta-linea" viewBox="0 0 1000 80" preserveAspectRatio="none" aria-hidden="true"><path d="M125 40 C 210 4, 290 4, 375 40 S 540 76, 625 40 S 790 4, 875 40"/></svg>
+      <div class="ruta-paradas">
+        <a class="parada gratis" href="servicios.html#diagnostico" style="--i:0"><span class="boya">1</span><div class="parada-card"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg><h3>Diagnóstico</h3><p>30 minutos mirando tu perfil como un cliente nuevo.</p><span class="dato">Sin costo</span></div></a>
+        <a class="parada" href="servicios.html#perfil" style="--i:1"><span class="boya">2</span><div class="parada-card"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4.5"/><circle cx="12" cy="10" r="3"/><path d="M7 18.2c1.2-2.3 3-3.4 5-3.4s3.8 1.1 5 3.4"/></svg><h3>Perfil y marca</h3><p>Bio, foto, destacadas y estilo visual.</p><span class="dato">Desde <span data-precio="perfil">$180.000</span></span></div></a>
+        <a class="parada" href="servicios.html#plan" style="--i:2"><span class="boya">3</span><div class="parada-card"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16.5" rx="3"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4M7.5 13.5h3M7.5 17h6"/></svg><h3>Contenido</h3><p>Un plan mensual de publicaciones.</p><span class="dato">Desde <span data-precio="contenido">$260.000</span>/mes</span></div></a>
+        <a class="parada" href="servicios.html#publicidad" style="--i:3"><span class="boya">4</span><div class="parada-card"><svg class="icono" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20.5h18"/><path d="M5 16l4.5-5 3.5 3 6-7.5"/><path d="M15 6.5h4v4"/></svg><h3>Publicidad</h3><p>Anuncios y un informe que se entiende.</p><span class="dato">Desde <span data-precio="publicidad">$120.000</span>/mes</span></div></a>
+      </div>
     </div>
   </div>
 </section>
@@ -188,7 +205,7 @@
     <span>Proyecto académico (Siglo 21 · Deriva). Marcas, casos y testimonios ilustrativos.</span>
   </div>
 </footer>
-<script src="js/datos.js?v=20261028a"></script>
-<script src="js/estela.js?v=20261028a"></script>
+<script src="js/datos.js?v=20261028b"></script>
+<script src="js/estela.js?v=20261028b"></script>
 </body>
 </html>

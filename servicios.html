@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Libre+Franklin:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="css/estela.css?v=20261028a">
+<link rel="stylesheet" href="css/estela.css?v=20261028b">
 </head>
 <body>
 <a class="saltar" href="#principal">Saltar al contenido</a>
@@ -45,48 +45,71 @@
     <p class="intro">Empezamos siempre por mirar. Después decidís hasta dónde seguimos.</p>
   </div>
 </section>
-<section>
-  <div class="ancho">
-    
-    <article class="servicio aparece" id="diagnostico">
-      <p class="nro"><span>Tramo 1</span><svg class="icono" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></p>
-      <div>
-        <h2>Diagnóstico</h2>
-        <p class="que">Miramos tu perfil como lo mira un cliente nuevo.</p>
-        <ul class="incluye"><li>Videollamada de 30 minutos</li><li>El test de 3 segundos con tu perfil</li><li>Tres observaciones por escrito</li></ul>
-      </div>
-      <div class="ficha"><dl><div><dt>Precio</dt><dd class="precio">Sin costo</dd></div><div><dt>Duración</dt><dd>30 minutos</dd></div></dl></div>
-    </article>
-    
-    <article class="servicio aparece" id="perfil">
-      <p class="nro"><span>Tramo 2</span><svg class="icono" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4.5"/><circle cx="12" cy="10" r="3"/><path d="M7 18.2c1.2-2.3 3-3.4 5-3.4s3.8 1.1 5 3.4"/></svg></p>
-      <div>
-        <h2>Perfil y marca</h2>
-        <p class="que">Que en tres segundos se sepa qué vendés, dónde y cómo pedirlo.</p>
-        <ul class="incluye"><li>Bio, nombre y foto</li><li>Destacadas ordenadas</li><li>Estilo visual con plantillas propias</li></ul>
-      </div>
-      <div class="ficha"><dl><div><dt>Precio</dt><dd class="precio">Desde <span data-precio="perfil">$180.000</span>, pago único</dd></div><div><dt>Duración</dt><dd>2 a 3 semanas</dd></div></dl></div>
-    </article>
-    
-    <article class="servicio aparece" id="plan">
-      <p class="nro"><span>Tramo 3</span><svg class="icono" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16.5" rx="3"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4M7.5 13.5h3M7.5 17h6"/></svg></p>
-      <div>
-        <h2>Contenido</h2>
-        <p class="que">Reels, carruseles e historias con un plan. Publicás menos y se nota más.</p>
-        <ul class="incluye"><li>12 publicaciones por mes</li><li>Historias todas las semanas</li><li>Aprobás cada publicación</li></ul>
-      </div>
-      <div class="ficha"><dl><div><dt>Precio</dt><dd class="precio">Desde <span data-precio="contenido">$260.000</span> por mes</dd></div><div><dt>Duración</dt><dd>Mínimo tres meses</dd></div></dl></div>
-    </article>
-    
-    <article class="servicio aparece" id="publicidad">
-      <p class="nro"><span>Tramo 4</span><svg class="icono" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20.5h18"/><path d="M5 16l4.5-5 3.5 3 6-7.5"/><path d="M15 6.5h4v4"/></svg></p>
-      <div>
-        <h2>Publicidad y métricas</h2>
-        <p class="que">Anuncios con el presupuesto que tengas y un informe que se entiende.</p>
-        <ul class="incluye"><li>Anuncios en Instagram y Google</li><li>Ajustes cada quince días</li><li>Informe mensual de una página</li></ul>
-      </div>
-      <div class="ficha"><dl><div><dt>Precio</dt><dd class="precio">Desde <span data-precio="publicidad">$120.000</span> por mes</dd></div><div><dt>Anuncios</dt><dd>Aparte, desde <span data-precio="inversionMinima">$60.000</span></dd></div></dl></div>
-    </article>
+
+<section class="servicio-banda" id="diagnostico">
+  <div class="ancho servicio aparece">
+    <div class="servicio-txt">
+      <p class="nro"><span class="nro-num">1</span><svg class="icono" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></p>
+      <h2>Diagnóstico</h2>
+      <p class="que">Miramos tu perfil como lo mira un cliente nuevo.</p>
+      <ul class="incluye"><li>Videollamada de 30 minutos</li><li>El test de 3 segundos con tu perfil</li><li>Tres observaciones por escrito</li></ul>
+      <div class="datos"><div><span>Precio</span><b>Sin costo</b></div><div><span>Duración</span><b>30 minutos</b></div></div>
+    </div>
+    <div class="vis vis-diag" aria-hidden="true">
+      <div class="mini-tel"><span class="mt-av"></span><span class="mt-l l1"></span><span class="mt-l l2"></span><span class="mt-l l3"></span><span class="mt-grilla"><i></i><i></i><i></i><i></i><i></i><i></i></span></div>
+      <span class="lupa"></span>
+      <p class="nota n1">Tu bio no dice qué vendés</p>
+      <p class="nota n2">Falta la ciudad</p>
+      <p class="nota n3">Sumá cómo pedir</p>
+    </div>
+  </div>
+</section>
+
+<section class="servicio-banda" id="perfil">
+  <div class="ancho servicio aparece">
+    <div class="servicio-txt">
+      <p class="nro"><span class="nro-num">2</span><svg class="icono" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="4.5"/><circle cx="12" cy="10" r="3"/><path d="M7 18.2c1.2-2.3 3-3.4 5-3.4s3.8 1.1 5 3.4"/></svg></p>
+      <h2>Perfil y marca</h2>
+      <p class="que">Que en tres segundos se sepa qué vendés, dónde y cómo pedirlo.</p>
+      <ul class="incluye"><li>Bio, nombre y foto</li><li>Destacadas ordenadas</li><li>Estilo visual con plantillas propias</li></ul>
+      <div class="datos"><div><span>Precio</span><b>Desde <span data-precio="perfil">$180.000</span></b></div><div><span>Duración</span><b>2 a 3 semanas</b></div></div>
+    </div>
+    <div class="vis vis-perfil" aria-hidden="true">
+      <div class="bio-card antes"><small>Antes</small><p>Creamos con el corazón<br>Tierra, fuego y amor</p></div>
+      <div class="bio-card despues"><small>Después</small><p>Cerámica de autor para tu mesa<br>Envíos a todo el país<br>Pedidos por WhatsApp ↓</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="servicio-banda" id="plan">
+  <div class="ancho servicio aparece">
+    <div class="servicio-txt">
+      <p class="nro"><span class="nro-num">3</span><svg class="icono" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16.5" rx="3"/><path d="M3 9.5h18M8 2.5v4M16 2.5v4M7.5 13.5h3M7.5 17h6"/></svg></p>
+      <h2>Contenido</h2>
+      <p class="que">Reels, carruseles e historias con un plan. Publicás menos y se nota más.</p>
+      <ul class="incluye"><li>12 publicaciones por mes</li><li>Historias todas las semanas</li><li>Aprobás cada publicación</li></ul>
+      <div class="datos"><div><span>Precio</span><b>Desde <span data-precio="contenido">$260.000</span>/mes</b></div><div><span>Duración</span><b>Mínimo tres meses</b></div></div>
+    </div>
+    <div class="vis vis-plan" aria-hidden="true">
+      <div class="feed"><i style="background:#0B7388"></i><i style="background:#E8D6BF" class="reel"></i><i style="background:#103F5E"></i><i style="background:#62D6D0" class="carru"></i><i style="background:#0A2C45"></i><i style="background:#DCEAEE" class="reel"></i><i style="background:#C98B5E"></i><i style="background:#0B7388" class="carru"></i><i style="background:#E8F3F5"></i></div>
+      <div class="semana"><span>Mar</span><span>Jue</span><span>Sáb</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="servicio-banda" id="publicidad">
+  <div class="ancho servicio aparece">
+    <div class="servicio-txt">
+      <p class="nro"><span class="nro-num">4</span><svg class="icono" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20.5h18"/><path d="M5 16l4.5-5 3.5 3 6-7.5"/><path d="M15 6.5h4v4"/></svg></p>
+      <h2>Publicidad y métricas</h2>
+      <p class="que">Anuncios con el presupuesto que tengas y un informe que se entiende.</p>
+      <ul class="incluye"><li>Anuncios en Instagram y Google</li><li>Ajustes cada quince días</li><li>Informe mensual de una página</li></ul>
+      <div class="datos"><div><span>Precio</span><b>Desde <span data-precio="publicidad">$120.000</span>/mes</b></div><div><span>Duración</span><b>Más inversión en anuncios</b></div></div>
+    </div>
+    <div class="vis vis-pub" aria-hidden="true">
+      <p class="pill">+38 % consultas</p>
+      <div class="barras"><span style="--h:34%"><em>Sem 1</em></span><span style="--h:46%"><em>Sem 2</em></span><span style="--h:58%"><em>Sem 3</em></span><span style="--h:82%"><em>Sem 4</em></span></div>
+    </div>
   </div>
 </section>
 
@@ -148,7 +171,7 @@
     <span>Proyecto académico (Siglo 21 · Deriva). Marcas, casos y testimonios ilustrativos.</span>
   </div>
 </footer>
-<script src="js/datos.js?v=20261028a"></script>
-<script src="js/estela.js?v=20261028a"></script>
+<script src="js/datos.js?v=20261028b"></script>
+<script src="js/estela.js?v=20261028b"></script>
 </body>
 </html>

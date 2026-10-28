@@ -158,40 +158,22 @@
     ubicar();
     addEventListener('resize', ubicar);
     if (document.fonts && document.fonts.ready) document.fonts.ready.then(ubicar);
-    if (quieto || !('IntersectionObserver' in window)) { r.classList.add('corre'); return; }
-    var o = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { ubicar(); r.classList.add('corre'); o.disconnect(); } }, { threshold: .5 });
+    var cajaTel = $('.tres-tel'), tel = cajaTel && $('.telefono', cajaTel);
+    function seguir() {
+      if (!tel) return;
+      [0, 1, 2, 3].forEach(function (k) { setTimeout(function () { tel.classList.remove('f0', 'f1', 'f2', 'f3'); tel.classList.add('f' + k); }, quieto ? 0 : k * 1000); });
+      setTimeout(function () { cajaTel.classList.add('decide'); }, quieto ? 0 : 3300);
+    }
+    if (quieto || !('IntersectionObserver' in window)) { r.classList.add('corre'); seguir(); return; }
+    var o = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { ubicar(); r.classList.add('corre'); seguir(); o.disconnect(); } }, { threshold: .5 });
     o.observe(r);
   });
 
-  /* ---------- cómo trabajamos: las cartas pasan solas hacia el costado (y se pueden deslizar) ---------- */
-  var mazo = $('.cartas');
-  if (mazo) (function () {
-    var cartas = $$('.carta', mazo), puntos = $$('.cartas-puntos i'), actual = 0, quietoHasta = 0, visible = false, encima = false;
-    function paso() { return cartas.length > 1 ? cartas[1].offsetLeft - cartas[0].offsetLeft : mazo.clientWidth; }
-    function alFinal() { return mazo.scrollLeft + mazo.clientWidth >= mazo.scrollWidth - 4; }
-    function marcar() { puntos.forEach(function (p, i) { p.classList.toggle('activo', i === actual); }); }
-    function ir(n) {
-      actual = (n + cartas.length) % cartas.length;
-      mazo.scrollTo({ left: cartas[actual].offsetLeft - cartas[0].offsetLeft, behavior: quieto ? 'auto' : 'smooth' });
-      marcar();
-    }
-    mazo.addEventListener('scroll', function () {
-      var n = alFinal() ? cartas.length - 1 : Math.round(mazo.scrollLeft / paso());
-      n = Math.max(0, Math.min(cartas.length - 1, n));
-      if (n !== actual) { actual = n; marcar(); }
-    }, { passive: true });
-    function tocaron() { quietoHasta = Date.now() + 9000; }     // si la persona las mueve, se quedan quietas un rato
-    $$('.flecha').forEach(function (b) { b.addEventListener('click', function () { tocaron(); ir(alFinal() && +b.getAttribute('data-dir') > 0 ? 0 : actual + +b.getAttribute('data-dir')); }); });
-    ['pointerdown', 'wheel', 'touchstart', 'keydown'].forEach(function (ev) { mazo.addEventListener(ev, tocaron, { passive: true }); });
-    mazo.addEventListener('pointerenter', function () { encima = true; });
-    mazo.addEventListener('pointerleave', function () { encima = false; });
-    if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { visible = es[0].isIntersecting; }, { threshold: .4 }).observe(mazo);
-    if (!quieto) setInterval(function () {
-      if (!visible || encima || document.hidden || Date.now() < quietoHasta) return;
-      ir(alFinal() ? 0 : actual + 1);
-    }, 3800);
-    marcar();
-  })();
+  /* ---------- cómo trabajamos: la corriente de cartas se frena un rato si la tocan ---------- */
+  $$('.corriente').forEach(function (cor) {
+    var t;
+    cor.addEventListener('touchstart', function () { cor.classList.add('pausa'); clearTimeout(t); t = setTimeout(function () { cor.classList.remove('pausa'); }, 5000); }, { passive: true });
+  });
 
   /* ---------- perfiles de Instagram (marcas del test y casos) ---------- */
   var GRILLA_ANTES = ['#c9a27a', '#3b6ea5', '#d94f70', '#e8d44d', '#6f9c6a', '#8e5bbf'];
@@ -278,7 +260,11 @@
     var MARCAS = ['arroyo', 'ferro', 'donteo'], actual = 0, cortar = null;
     var tel = $('#telTest'), perfil = $('#perfilTest'), velo = $('#veloTest'), anillo = $('#anilloTest');
     selector.innerHTML = MARCAS.map(function (k, i) { return '<button type="button" data-i="' + i + '" aria-pressed="' + (i === 0) + '">' + esc(PERFILES[k].nombre) + '</button>'; }).join('');
-    function etapa(n) { ['inicio', 'mirando', 'pregunta', 'resultado'].forEach(function (x) { $('#t-' + x).hidden = x !== n; }); }
+    function etapa(n) {
+      ['inicio', 'mirando', 'pregunta', 'resultado'].forEach(function (x) { $('#t-' + x).hidden = x !== n; });
+      var esp = $('#t-espera'); if (esp) esp.hidden = n === 'pregunta' || n === 'resultado';
+      if (n === 'resultado' && innerWidth > 1000) $('#t-inicio').hidden = false;   // en la compu el botón queda para volver a mirar
+    }
     function reiniciar() {
       if (cortar) cortar();
       anillo.hidden = true;
@@ -297,7 +283,7 @@
       perfil.innerHTML = perfilHTML(p, 'antes');
       tel.classList.remove('tapado'); velo.hidden = true;
       etapa('mirando');
-      if (innerWidth <= 960) tel.scrollIntoView({ behavior: quieto ? 'auto' : 'smooth', block: 'center' });
+      if (innerWidth <= 1000) tel.scrollIntoView({ behavior: quieto ? 'auto' : 'smooth', block: 'center' });
       medir('test_iniciado', { marca: p.nombre });
       cortar = cuentaRegresiva(anillo, 3, function () {
         anillo.hidden = true; tel.classList.add('tapado'); velo.hidden = false; velo.textContent = 'Se acabó el tiempo.';

@@ -16,7 +16,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Libre+Franklin:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="css/estela.css?v=20261028a">
+<link rel="stylesheet" href="css/estela.css?v=20261028b">
 </head>
 <body>
 <a class="saltar" href="#principal">Saltar al contenido</a>
@@ -37,52 +37,65 @@
   </nav>
 </header>
 
-<main id="principal" class="oscuro">
-<section class="pagina-cab oscuro">
+<main id="principal">
+<section class="test-escena oscuro">
   <div class="ancho">
-    <p class="ceja">El test de los 3 segundos</p>
-    <h1>¿Qué vende esta marca?</h1>
-    <p class="intro">Mirás un perfil tres segundos, se tapa y respondés. Igual que un cliente nuevo.</p>
-  </div>
-</section>
-<section class="seccion" style="padding-top:56px">
-  <div class="ancho test">
-    <div class="test-col">
-      <div class="selector" id="selector" role="group" aria-label="Elegí un perfil de ejemplo"></div>
-      <p class="chiquita marcas">Marcas inventadas para el test.</p>
-      <div class="etapa-test" id="t-inicio"><button class="btn btn-primario" id="tMirar" type="button">Mirar 3 segundos</button></div>
-      <div class="etapa-test" id="t-mirando" hidden><p class="chiquita" aria-live="polite">Mirá con atención.</p></div>
-      <div class="etapa-test" id="t-pregunta" hidden>
-        <h3>¿Qué vende esta marca?</h3>
-        <div class="opciones" id="tOpciones" role="radiogroup" aria-label="Opciones"></div>
+    <div class="test-cab">
+      <p class="ceja">El test de los 3 segundos</p>
+      <h1>¿Qué vende esta marca?</h1>
+    </div>
+    <div class="test">
+      <div class="test-izq">
+        <ol class="test-pasos"><li><b>1</b>Elegí una marca</li><li><b>2</b>Mirala tres segundos</li><li><b>3</b>Respondé qué vende</li></ol>
+        <div class="selector" id="selector" role="group" aria-label="Elegí un perfil de ejemplo"></div>
+        <p class="chiquita marcas">Marcas inventadas para el test.</p>
+        <div class="etapa-test" id="t-inicio"><button class="btn btn-primario" id="tMirar" type="button">Mirar 3 segundos</button></div>
+        <div class="etapa-test" id="t-mirando" hidden><p class="chiquita" aria-live="polite">Mirá con atención.</p></div>
       </div>
-      <div class="etapa-test" id="t-resultado" hidden>
-        <p class="veredicto" id="tVeredicto" tabindex="-1"></p>
-        <p id="tMensaje"></p>
-        <div class="comparar">
-          <div><small>Lo que decía la bio</small><span id="tAntes"></span></div>
-          <div class="despues"><small>Cómo la escribiría Estela</small><span id="tDespues"></span></div>
-        </div>
-        <div class="botonera">
-          <a class="btn btn-primario" href="contacto.html">Que Valentina mire mi perfil</a>
-          <button class="btn btn-borde" type="button" id="tOtra">Probar otra marca</button>
+      <div class="escenario">
+        <div class="telefono" id="telTest">
+          <div class="anillo" id="anilloTest" hidden aria-hidden="true"><svg viewBox="0 0 44 44"><circle class="pista" cx="22" cy="22" r="19"/><circle class="arco" cx="22" cy="22" r="19"/></svg><b>3</b></div>
+          <div id="perfilTest"></div>
+          <div class="velo" id="veloTest" hidden>Se acabó el tiempo.</div>
         </div>
       </div>
-
-      <div class="revisor">
-        <h2>¿Y tu bio?</h2>
-        <p class="intro">Pegala acá y revisamos cuatro cosas que un cliente busca enseguida.</p>
-        <label for="bio" class="chiquita" style="display:block;margin-top:18px">Bio de tu Instagram</label>
-        <textarea id="bio" placeholder="Ejemplo: Velas de soja para tu casa. Hechas en Villa Allende. Pedidos por WhatsApp."></textarea>
-        <button class="btn btn-borde" type="button" id="bioRevisar">Revisar mi bio</button>
-        <div id="bioResultado" aria-live="polite"></div>
+      <div class="test-der">
+        <div class="t-espera" id="t-espera"><span class="signo" aria-hidden="true">?</span><p>La pregunta aparece acá cuando se tape el perfil.</p></div>
+        <div class="etapa-test" id="t-pregunta" hidden>
+          <h3>¿Qué vende esta marca?</h3>
+          <div class="opciones" id="tOpciones" role="radiogroup" aria-label="Opciones"></div>
+        </div>
+        <div class="etapa-test" id="t-resultado" hidden>
+          <p class="veredicto" id="tVeredicto" tabindex="-1"></p>
+          <p id="tMensaje" class="t-mensaje"></p>
+          <div class="comparar">
+            <div><small>Lo que decía la bio</small><span id="tAntes"></span></div>
+            <div class="despues"><small>Cómo la escribiría Estela</small><span id="tDespues"></span></div>
+          </div>
+          <div class="botonera">
+            <a class="btn btn-primario" href="contacto.html">Que Valentina mire mi perfil</a>
+            <button class="btn btn-borde" type="button" id="tOtra">Otra marca</button>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="escenario">
-      <div class="telefono" id="telTest">
-        <div class="anillo" id="anilloTest" hidden aria-hidden="true"><svg viewBox="0 0 44 44"><circle class="pista" cx="22" cy="22" r="19"/><circle class="arco" cx="22" cy="22" r="19"/></svg><b>3</b></div>
-        <div id="perfilTest"></div>
-        <div class="velo" id="veloTest" hidden>Se acabó el tiempo.</div>
+  </div>
+</section>
+
+<section class="seccion revisor-sec">
+  <div class="ancho revisor">
+    <div>
+      <p class="ceja">Ahora con tu perfil</p>
+      <h2 class="titulo">¿Y tu bio?</h2>
+      <p class="intro">Pegala acá y revisamos las cuatro cosas que un cliente busca enseguida.</p>
+      <label for="bio" class="etiqueta-campo">Bio de tu Instagram</label>
+      <textarea id="bio" placeholder="Ejemplo: Velas de soja para tu casa. Hechas en Villa Allende. Pedidos por WhatsApp."></textarea>
+      <button class="btn btn-primario" type="button" id="bioRevisar">Revisar mi bio</button>
+    </div>
+    <div class="revisor-res" id="bioResultado" aria-live="polite">
+      <div class="revisor-vacio">
+        <p class="ceja">Lo que revisamos</p>
+        <ul><li>Qué hacés</li><li>Para quién</li><li>Dónde estás</li><li>Cómo pedirte</li></ul>
       </div>
     </div>
   </div>
@@ -106,7 +119,7 @@
     <span>Proyecto académico (Siglo 21 · Deriva). Marcas, casos y testimonios ilustrativos.</span>
   </div>
 </footer>
-<script src="js/datos.js?v=20261028a"></script>
-<script src="js/estela.js?v=20261028a"></script>
+<script src="js/datos.js?v=20261028b"></script>
+<script src="js/estela.js?v=20261028b"></script>
 </body>
 </html>
