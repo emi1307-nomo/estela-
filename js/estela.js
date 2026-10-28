@@ -353,11 +353,16 @@
       e.preventDefault();
       var f = function (n) { return (form.elements[n] && form.elements[n].value || '').trim(); };
       var err = $('#formError');
-      ['nombre', 'negocio', 'whatsapp'].forEach(function (n) { form.elements[n].removeAttribute('aria-invalid'); });
+      ['nombre', 'negocio', 'email', 'whatsapp'].forEach(function (n) { form.elements[n].removeAttribute('aria-invalid'); });
       if (!f('nombre') || !f('negocio')) {
         err.textContent = 'Completá tu nombre y el de tu negocio.';
         (f('nombre') ? form.elements.negocio : form.elements.nombre).setAttribute('aria-invalid', 'true');
         (f('nombre') ? form.elements.negocio : form.elements.nombre).focus();
+        return;
+      }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(f('email'))) {
+        err.textContent = 'Escribí un mail válido: ahí te mandamos la guía.';
+        form.elements.email.setAttribute('aria-invalid', 'true'); form.elements.email.focus();
         return;
       }
       if (f('whatsapp').replace(/\D/g, '').length < 8) {
@@ -369,7 +374,9 @@
       var ig = f('instagram').replace(/^@?/, '@');
       var horario = (form.querySelector('input[name="horario"]:checked') || {}).value || 'A coordinar';
       var de = origen();
-      var datos = { Nombre: f('nombre'), Negocio: f('negocio'), Instagram: ig === '@' ? 'No indicó' : ig, WhatsApp: f('whatsapp'), 'Quiere resolver': f('necesidad'), Horario: horario };
+      var novedades = !!(form.elements.novedades && form.elements.novedades.checked);
+      var datos = { Nombre: f('nombre'), Negocio: f('negocio'), Mail: f('email'), Instagram: ig === '@' ? 'No indicó' : ig, WhatsApp: f('whatsapp'),
+        'Quiere resolver': f('necesidad'), Horario: horario, 'Acepta novedades por mail': novedades ? 'Sí' : 'No' };
       if (de) datos['Llegó desde'] = de;
       var texto = 'Hola Estela, quiero pedir el diagnóstico sin costo.\n\n' + Object.keys(datos).map(function (k) { return k + ': ' + datos[k]; }).join('\n');
       var url = linkWa(texto);
@@ -380,7 +387,13 @@
 
       // copia al mail por FormSubmit (la primera vez hay que confirmar el mail desde la bandeja de entrada)
       if (D.email && window.fetch) {
-        var cuerpo = { _subject: 'Nueva consulta en la web de Estela: ' + datos.Negocio, _template: 'table', _captcha: 'false' };
+        var guia = new URL(D.guia || 'guia.html', location.href).href;
+        // el campo email permite que FormSubmit le conteste solo a quien completó el formulario, con el enlace a la guía
+        var cuerpo = { _subject: 'Nueva consulta en la web de Estela: ' + datos.Negocio, _template: 'table', _captcha: 'false', email: datos.Mail,
+          _autoresponse: 'Hola ' + datos.Nombre.split(' ')[0] + ', gracias por escribirle a Estela.\n\n' +
+            'Acá tenés tu guía «Tu perfil en tres segundos»: ' + guia + '\n\n' +
+            'Valentina te escribe por WhatsApp en ' + (D.respuesta || 'menos de 24 horas') + ' para coordinar el diagnóstico sin costo.\n\n' +
+            'Estela · Comunicación para emprendimientos y PyMEs' };
         for (var k in datos) cuerpo[k] = datos[k];
         fetch('https://formsubmit.co/ajax/' + D.email, {
           method: 'POST', keepalive: true,
@@ -389,10 +402,13 @@
       }
 
       medir('formulario_enviado', { necesidad: datos['Quiere resolver'], horario: horario });
+      medir('guia_solicitada', { novedades: novedades });
       form.hidden = true;
       var listo = $('#listo'); listo.hidden = false;
       $('#listoTitulo').textContent = 'Listo, ' + datos.Nombre.split(' ')[0] + '.';
       var lw = $('#listoWa'); if (lw) { lw.href = url; lw.hidden = !D.whatsapp; }
+      var lm = $('#listoMail'); if (lm) lm.textContent = datos.Mail;
+      var lg = $('#listoGuia'); if (lg && D.guia) lg.href = D.guia;
       $('#listoTitulo').focus();
     });
   })();

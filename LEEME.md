@@ -15,7 +15,8 @@ Trabajo práctico de Marketing Digital (Universidad Siglo 21), grupo Deriva.
 ## Cómo llegan las consultas
 1. El formulario abre WhatsApp con el mensaje armado hacia el número de `datos.js`.
 2. Además manda una copia al mail con FormSubmit. **La primera vez que alguien lo use, FormSubmit manda un mail para confirmar la dirección: hay que tocar el enlace de ese mail**; recién después llegan las copias.
-3. Los eventos `test_completado`, `bio_revisada`, `horario_elegido` y `formulario_enviado` quedan en `window.dataLayer`, listos para Google Tag Manager o Analytics.
+3. **Mail y guía (email marketing):** el formulario pide el mail. FormSubmit le contesta solo a esa persona con el enlace a la guía «Tu perfil en tres segundos» (`guia.html`, con descarga en `guia-estela.pdf`). La casilla «Quiero recibir ideas y novedades» llega en la copia como «Acepta novedades por mail: Sí/No»: solo a quienes dijeron que sí se les puede mandar email marketing. Para cambiar la guía por otra (por ejemplo, una de Canva), cambiá `guia` en `js/datos.js`.
+4. Los eventos `test_completado`, `bio_revisada`, `horario_elegido`, `formulario_enviado` y `guia_solicitada` quedan en `window.dataLayer`, listos para Google Tag Manager o Analytics.
 
 ## Pendiente
 - Foto de Valentina (hoy hay un ojo de buey con una "V").

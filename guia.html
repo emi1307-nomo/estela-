@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Tu perfil en tres segundos · Guía de Estela</title>
+<meta name="description" content="Guía práctica de Estela: cómo lograr que tu perfil se entienda en tres segundos.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Libre+Franklin:wght@400;500;600;700&display=swap">
+<style>
+/* Guía en diapositivas (16:9). En pantalla se ven una debajo de otra; al imprimir o exportar a PDF, una por página. */
+:root{--mar:#0A2C45;--mar-2:#103F5E;--mar-3:#061F32;--espuma:#F0F6F7;--espuma-2:#DCEAEE;--baliza:#0B7388;--luz:#62D6D0;--tinta:#0A2C45;--suave:#4A6A7C;--linea:#C3D6DC;
+  --display:"Libre Baskerville",Georgia,serif;--cuerpo:"Libre Franklin",system-ui,sans-serif}
+*{box-sizing:border-box}
+html{font-synthesis:none}
+body{margin:0;background:#C9D6DB;font-family:var(--cuerpo);color:var(--tinta);-webkit-font-smoothing:antialiased;padding:24px 16px 60px}
+.barra{max-width:1280px;margin:0 auto 18px;display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center}
+.barra p{margin:0;font-size:14px;color:var(--suave)}
+.barra a{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:999px;background:var(--baliza);color:#fff;text-decoration:none;font-weight:600;font-size:14px}
+.slide{position:relative;width:min(1280px,100%);aspect-ratio:16/9;margin:0 auto 22px;overflow:hidden;container-type:inline-size;background:var(--espuma);
+  border-radius:14px;box-shadow:0 20px 40px -24px rgba(6,31,50,.5);padding:6.2cqw 7cqw;display:flex;flex-direction:column}
+.slide.oscura{background:radial-gradient(110% 90% at 85% 100%,#0B3352,var(--mar-3) 65%);color:#E8F3F5}
+.ceja{font:600 1.05cqw var(--cuerpo);letter-spacing:.18em;text-transform:uppercase;color:var(--baliza)}
+.oscura .ceja{color:var(--luz)}
+h1,h2,h3{font-family:var(--display);font-weight:400;margin:0;letter-spacing:-.015em}
+h1{font-size:5.6cqw;line-height:1.08;max-width:14ch}
+h2{font-size:3.6cqw;line-height:1.12;margin-top:1.4cqw;max-width:20ch}
+em{font-style:italic;color:var(--baliza)}
+.oscura em{color:var(--luz)}
+p{margin:0}
+.bajada{font-size:1.65cqw;line-height:1.55;color:var(--suave);max-width:46ch;margin-top:1.8cqw}
+.oscura .bajada{color:#A3C3CF}
+.pie{position:absolute;left:7cqw;right:7cqw;bottom:3.4cqw;display:flex;justify-content:space-between;align-items:center;font-size:1.05cqw;color:var(--suave)}
+.oscura .pie{color:#A3C3CF}
+.logo{display:inline-flex;align-items:center;gap:.6cqw;font:400 1.9cqw var(--display);letter-spacing:-.03em;color:var(--tinta)}
+.oscura .logo{color:#E8F3F5}
+.logo svg{width:2.4cqw;height:auto;margin-top:.3cqw}
+
+/* 1 · portada */
+.portada{justify-content:center}
+.portada h1{font-size:6.6cqw}
+.portada .bajada{max-width:38ch}
+.portada .olas{position:absolute;left:0;right:0;bottom:0;width:100%;height:9cqw;opacity:.75}
+.portada .torre{position:absolute;right:9cqw;bottom:0;width:6cqw}
+/* 2 · tres segundos */
+.linea{position:relative;display:grid;grid-template-columns:repeat(4,1fr);margin-top:auto;margin-bottom:6cqw}
+.linea::before{content:"";position:absolute;left:.7cqw;right:calc(25% - .7cqw);top:.7cqw;height:2px;background:var(--baliza)}
+.linea div{position:relative;padding-right:2cqw}
+.linea div::before{content:"";display:block;width:1.4cqw;height:1.4cqw;border-radius:50%;background:var(--baliza);margin-bottom:1.6cqw}
+.linea span{font:600 1.05cqw var(--cuerpo);letter-spacing:.12em;color:var(--suave)}
+.linea h3{font-size:2cqw;margin:.6cqw 0 .5cqw}
+.linea p{font-size:1.4cqw;color:var(--suave);line-height:1.45}
+.linea div:last-child h3{color:var(--baliza)}
+/* 3 · fórmula */
+.formula{display:grid;grid-template-columns:repeat(4,1fr);gap:1.6cqw;margin-top:auto;margin-bottom:5.5cqw}
+.formula div{background:#fff;border:1px solid var(--linea);border-radius:1.6cqw;padding:2.2cqw 2cqw}
+.formula b{display:block;font:400 italic 3.2cqw/1 var(--display);color:var(--baliza)}
+.formula h3{font-size:1.9cqw;margin:1.2cqw 0 .6cqw}
+.formula p{font-size:1.3cqw;line-height:1.5;color:var(--suave)}
+.formula .ej{margin-top:1cqw;font-size:1.2cqw;color:var(--tinta);background:var(--espuma-2);border-radius:.8cqw;padding:.8cqw 1cqw}
+/* 4 · antes y después */
+.comparar{display:grid;grid-template-columns:1fr 1fr;gap:2cqw;margin-top:auto;margin-bottom:5.5cqw}
+.bio{border-radius:1.6cqw;padding:2.4cqw 2.6cqw;font-size:1.6cqw;line-height:1.55}
+.bio small{display:block;font:600 1cqw var(--cuerpo);letter-spacing:.16em;text-transform:uppercase;margin-bottom:1cqw}
+.bio.antes{background:var(--mar-2);color:#A3C3CF}
+.bio.antes small{color:#A3C3CF}
+.bio.despues{background:#fff;color:var(--tinta);border:2px solid var(--luz)}
+.bio.despues small{color:var(--luz)}
+.bio + .bio{position:relative}
+/* 5 · foto y nombre / 6 · destacadas */
+.dos-col{display:grid;grid-template-columns:1fr 1fr;gap:4cqw;align-items:center;flex:1;margin-bottom:4cqw}
+.tips{list-style:none;padding:0;margin:0;display:grid;gap:1.6cqw}
+.tips li{position:relative;padding-left:2.6cqw;font-size:1.55cqw;line-height:1.5}
+.tips li::before{content:"";position:absolute;left:0;top:.55cqw;width:1.1cqw;height:1.1cqw;border-radius:50%;background:var(--baliza)}
+.tips b{font-weight:600}
+.avatar-demo{display:flex;gap:3cqw;justify-content:center;align-items:flex-end}
+.avatar-demo figure{margin:0;text-align:center;font-size:1.2cqw;color:var(--suave)}
+.avatar-demo .circ{border-radius:50%;display:grid;place-items:center;color:#fff;font-family:var(--display);margin:0 auto 1cqw}
+.avatar-demo .mal .circ{width:5.4cqw;height:5.4cqw;background:linear-gradient(135deg,#C98B5E,#8C5A3C 40%,#E7D3BE 60%,#6E4A33);font-size:1cqw;letter-spacing:.05em}
+.avatar-demo .bien .circ{width:9cqw;height:9cqw;background:#8C5A3C;font-size:4.6cqw}
+.avatar-demo .bien figcaption{color:var(--baliza);font-weight:600}
+.burbujas{display:flex;gap:2cqw;justify-content:center;flex-wrap:wrap}
+.burbujas div{text-align:center;font-size:1.25cqw;color:var(--tinta)}
+.burbujas span{display:grid;place-items:center;width:7.5cqw;height:7.5cqw;margin:0 auto 1cqw;border-radius:50%;border:.35cqw solid var(--luz);background:var(--mar);color:#fff;font:400 1.4cqw var(--display);padding:.6cqw;line-height:1.2}
+/* 7 · checklist */
+.check{list-style:none;padding:0;margin:auto 0 5.5cqw;display:grid;grid-template-columns:1fr 1fr;gap:1.6cqw 4cqw}
+.check li{display:flex;gap:1.4cqw;align-items:flex-start;font-size:1.6cqw;line-height:1.45}
+.check li::before{content:"";flex:none;width:2cqw;height:2cqw;margin-top:.1cqw;border:2px solid var(--baliza);border-radius:.4cqw}
+/* 8 · cierre */
+.cierre{justify-content:center}
+.cierre .cta{display:inline-flex;align-self:flex-start;margin-top:3cqw;padding:1.4cqw 2.6cqw;border-radius:99cqw;background:var(--luz);color:var(--mar);font:600 1.6cqw var(--cuerpo);text-decoration:none}
+.cierre .datos{margin-top:2.4cqw;font-size:1.45cqw;color:#A3C3CF;line-height:1.7}
+.cierre .datos b{color:#fff;font-weight:600}
+
+@page{size:1280px 720px;margin:0}
+@media print{
+  body{background:none;padding:0}
+  .barra{display:none}
+  .slide{width:1280px;height:720px;margin:0;border-radius:0;box-shadow:none;break-after:page;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+<div class="barra">
+  <p>Guía de Estela · 8 diapositivas</p>
+  <a href="guia-estela.pdf" download>Descargar en PDF</a>
+</div>
+
+<!-- 1 -->
+<section class="slide oscura portada">
+  <p class="ceja">Guía práctica de Estela</p>
+  <h1 style="margin-top:1.6cqw">Tu perfil en <em>tres segundos.</em></h1>
+  <p class="bajada">Lo que mira un cliente antes de leer tu bio, y cómo ordenarlo en una tarde.</p>
+  <svg class="olas" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true"><path d="M0 22 Q25 12 50 22 T100 22 T150 22 T200 22 T250 22 T300 22 T350 22 T400 22 T450 22 T500 22 T550 22 T600 22 T650 22 T700 22 T750 22 T800 22 T850 22 T900 22 T950 22 T1000 22 T1050 22 T1100 22 T1150 22 T1200 22" fill="none" stroke="#2E6A8E" stroke-width="1.5" vector-effect="non-scaling-stroke"/><path d="M0 42 Q25 32 50 42 T100 42 T150 42 T200 42 T250 42 T300 42 T350 42 T400 42 T450 42 T500 42 T550 42 T600 42 T650 42 T700 42 T750 42 T800 42 T850 42 T900 42 T950 42 T1000 42 T1050 42 T1100 42 T1150 42 T1200 42" fill="none" stroke="#2E6A8E" stroke-width="1.5" opacity=".6" vector-effect="non-scaling-stroke"/></svg>
+  <svg class="torre" viewBox="0 0 40 104" aria-hidden="true"><circle cx="20" cy="29" r="15" fill="#62D6D0" opacity=".16"/><path d="M10 104 L14 34 L26 34 L30 104 Z" fill="#E8F3F5"/><path d="M11.3 82 L28.7 82 L29.4 93 L10.6 93 Z" fill="#0B7388"/><path d="M12.6 58 L27.4 58 L28 68 L12 68 Z" fill="#0B7388"/><rect x="12" y="24" width="16" height="10" rx="2" fill="#0A2C45" stroke="#E8F3F5" stroke-width="2"/><circle cx="20" cy="29" r="3.6" fill="#CDF8F5"/><path d="M10.5 24.5 L20 15.5 L29.5 24.5 Z" fill="#E8F3F5"/></svg>
+  <div class="pie" style="bottom:auto;top:4cqw"><span class="logo">estela<svg viewBox="0 0 30 14" aria-hidden="true"><path d="M1 4 Q5.5 0 10 4 T19 4 T28 4" fill="none" stroke="#62D6D0" stroke-width="2.6" stroke-linecap="round"/><path d="M1 10.5 Q5.5 6.5 10 10.5 T19 10.5 T28 10.5" fill="none" stroke="#62D6D0" stroke-width="2.6" stroke-linecap="round" opacity=".45"/></svg></span><span>Comunicación para emprendimientos y PyMEs</span></div>
+</section>
+
+<!-- 2 -->
+<section class="slide">
+  <p class="ceja">01 · El problema</p>
+  <h2>Tu cliente decide <em>antes</em> de leer tu bio.</h2>
+  <p class="bajada">Llega desde una historia, un anuncio o una recomendación. En tres segundos ya sabe si se queda.</p>
+  <div class="linea">
+    <div><span>0 S</span><h3>Mira la foto</h3><p>El logo o la cara.</p></div>
+    <div><span>1 S</span><h3>Lee el nombre</h3><p>Si no dice el rubro, duda.</p></div>
+    <div><span>2 S</span><h3>Lee la primera línea</h3><p>Busca qué vendés y dónde.</p></div>
+    <div><span>3 S</span><h3>Se queda o se va</h3><p>Si tuvo que adivinar, se va.</p></div>
+  </div>
+  <div class="pie"><span>Tu perfil en tres segundos</span><span>2 / 8</span></div>
+</section>
+
+<!-- 3 -->
+<section class="slide">
+  <p class="ceja">02 · La fórmula</p>
+  <h2>Una bio clara responde <em>cuatro preguntas.</em></h2>
+  <div class="formula">
+    <div><b>1</b><h3>Qué vendés</h3><p>Con la palabra que usaría tu cliente.</p><p class="ej">Cerámica de autor</p></div>
+    <div><b>2</b><h3>Para quién</h3><p>O para qué sirve.</p><p class="ej">para tu mesa</p></div>
+    <div><b>3</b><h3>Dónde</h3><p>Tu ciudad o hasta dónde llegás.</p><p class="ej">Córdoba · envíos al país</p></div>
+    <div><b>4</b><h3>Cómo pedirlo</h3><p>Un paso claro, al final.</p><p class="ej">Pedidos por WhatsApp ↓</p></div>
+  </div>
+  <div class="pie"><span>Tu perfil en tres segundos</span><span>3 / 8</span></div>
+</section>
+
+<!-- 4 -->
+<section class="slide">
+  <p class="ceja">03 · Antes y después</p>
+  <h2>Las frases lindas no venden. <em>Las claras, sí.</em></h2>
+  <div class="comparar">
+    <div class="bio antes"><small>Antes</small>Estrategia · Bienestar · Claridad<br>Ayudo a personas a conectar con su mejor versión</div>
+    <div class="bio despues"><small>Después</small>Contadora para emprendedores<br>Ordeno tus números sin vueltas<br>Córdoba y online · Reservá tu consulta ↓</div>
+  </div>
+  <div class="pie"><span>Tu perfil en tres segundos</span><span>4 / 8</span></div>
+</section>
+
+<!-- 5 -->
+<section class="slide">
+  <p class="ceja">04 · Foto y nombre</p>
+  <h2>Lo primero que se ve, <em>en chiquito.</em></h2>
+  <div class="dos-col">
+    <ul class="tips">
+      <li><b>Foto:</b> un logo simple o tu cara. Tiene que entenderse del tamaño de una moneda.</li>
+      <li><b>Nombre:</b> sumá el rubro. «Pampa Tejidos» dice más que «Pampa».</li>
+      <li><b>Usuario:</b> corto y fácil de dictar por teléfono.</li>
+    </ul>
+    <div class="avatar-demo">
+      <figure class="mal"><div class="circ">LOGO DETALLADO</div><figcaption>No se lee</figcaption></figure>
+      <figure class="bien"><div class="circ">P</div><figcaption>Se entiende</figcaption></figure>
+    </div>
+  </div>
+  <div class="pie"><span>Tu perfil en tres segundos</span><span>5 / 8</span></div>
+</section>
+
+<!-- 6 -->
+<section class="slide oscura">
+  <p class="ceja">05 · Destacadas</p>
+  <h2>Que las historias destacadas <em>respondan antes de que pregunten.</em></h2>
+  <div class="dos-col">
+    <p class="bajada" style="margin:0">Si te preguntan siempre lo mismo por mensaje, la respuesta va en una destacada. Cuatro alcanzan:</p>
+    <div class="burbujas"><div><span>Qué es</span></div><div><span>Precios</span></div><div><span>Envíos</span></div><div><span>Cómo pedir</span></div></div>
+  </div>
+  <div class="pie"><span>Tu perfil en tres segundos</span><span>6 / 8</span></div>
+</section>
+
+<!-- 7 -->
+<section class="slide">
+  <p class="ceja">06 · Checklist</p>
+  <h2>Revisá tu perfil <em>en una tarde.</em></h2>
+  <ul class="check">
+    <li>La primera línea dice qué vendés.</li>
+    <li>Se sabe dónde estás o si hacés envíos.</li>
+    <li>La bio cierra con cómo pedir.</li>
+    <li>La foto se entiende en chiquito.</li>
+    <li>El nombre incluye el rubro.</li>
+    <li>Hay destacadas con precios y envíos.</li>
+  </ul>
+  <div class="pie"><span>Tu perfil en tres segundos</span><span>7 / 8</span></div>
+</section>
+
+<!-- 8 -->
+<section class="slide oscura cierre">
+  <p class="ceja">¿Lo vemos juntos?</p>
+  <h2 style="max-width:18ch">Un diagnóstico de 30 minutos, <em>sin costo.</em></h2>
+  <p class="bajada">Miramos tu perfil como lo mira un cliente nuevo y te llevás tres observaciones concretas.</p>
+  <a class="cta" href="https://emi1307-nomo.github.io/estela-/contacto.html">Pedir mi diagnóstico</a>
+  <p class="datos">WhatsApp <b>388 437-7035</b> · emi1307-nomo.github.io/estela-</p>
+  <div class="pie"><span class="logo">estela<svg viewBox="0 0 30 14" aria-hidden="true"><path d="M1 4 Q5.5 0 10 4 T19 4 T28 4" fill="none" stroke="#62D6D0" stroke-width="2.6" stroke-linecap="round"/><path d="M1 10.5 Q5.5 6.5 10 10.5 T19 10.5 T28 10.5" fill="none" stroke="#62D6D0" stroke-width="2.6" stroke-linecap="round" opacity=".45"/></svg></span><span>Proyecto académico · Siglo 21 · Deriva</span></div>
+</section>
+</body>
+</html>

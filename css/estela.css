@@ -548,6 +548,13 @@ fieldset.campo{border:0;padding:0;margin:0 0 16px;min-width:0}
   .pie-links{gap:4px 16px}
 }
 
+/* formulario: ayuda del mail, casilla de novedades y acciones al terminar */
+.ayuda{font-size:.82rem;color:var(--tinta-suave);margin:2px 0 0}
+.casilla{display:flex;gap:12px;align-items:flex-start;margin:2px 0 18px;font-size:.88rem;line-height:1.5;color:var(--tinta-suave);cursor:pointer}
+.casilla input{width:20px;height:20px;margin-top:2px;flex:none;accent-color:var(--baliza)}
+.listo-acciones{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.listo .listo-acciones .btn{margin-top:0}
+
 /* ilustraciones de servicios en el celu: más altas para que las tarjetas no se pisen */
 @media (max-width:600px){.vis{aspect-ratio:1/1;border-radius:24px}.bio-card{width:76%;padding:18px 18px}.bio-card p{font-size:.86rem}.bio-card.antes{top:9%}.bio-card.despues{bottom:9%}.vis-diag .nota{font-size:.76rem;padding:10px 11px}}
 

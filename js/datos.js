@@ -13,6 +13,9 @@ window.ESTELA = {
   ciudad: 'Córdoba',
   respuesta: 'menos de 24 horas',          // compromiso de respuesta
   dominio: 'estela.ar',                    // de ejemplo
+  // La guía que le llega por mail a quien completa el formulario (puede ser un link de Canva o de un PDF)
+  guia: 'guia.html',
+
   horarios: ['Martes 10:00', 'Miércoles 16:30', 'Jueves 11:00'],
 
   // Precios de referencia (en pesos). Se muestran en Servicios y en Preguntas.
