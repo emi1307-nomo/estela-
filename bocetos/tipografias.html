@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Tipografías para Estela</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&family=Instrument+Sans:wght@400;600;700&family=Instrument+Serif:ital@0;1&family=Syne:wght@600;800&family=Manrope:wght@400;600;700&family=Encode+Sans:wdth,wght@75..125,400..900&family=Fraunces:opsz,wght,SOFT@9..144,400..800,0..100&family=Figtree:wght@400;600;700&display=swap">
+<style>
+:root{--mar:#0A2C45;--mar-3:#061F32;--espuma:#F0F6F7;--espuma-2:#DCEAEE;--baliza:#0B7388;--luz:#62D6D0;--tinta:#0A2C45;--suave:#44667A;--sobre:#E8F3F5;--sobre-suave:#9DBFCC;--mono:"IBM Plex Mono",monospace}
+*{box-sizing:border-box}
+body{margin:0;background:var(--espuma);color:var(--tinta);font:400 16px/1.55 "IBM Plex Sans",system-ui,sans-serif}
+.cab{max-width:1240px;margin:0 auto;padding:48px 24px 20px}
+.cab p{margin:0;font:500 .74rem var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--baliza)}
+.cab h1{margin:10px 0 8px;font:800 clamp(2.2rem,5vw,3.4rem)/1 "Bricolage Grotesque",sans-serif;letter-spacing:-.04em}
+.cab div{max-width:62ch;color:var(--suave)}
+.opcion{max-width:1240px;margin:28px auto;padding:0 24px}
+.opcion header{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:12px}
+.opcion header b{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--mar);color:#fff;font:600 .95rem var(--mono)}
+.opcion header h2{margin:0;font:700 1.3rem/1.2 "IBM Plex Sans",sans-serif}
+.opcion header span{font:400 .82rem var(--mono);color:var(--suave)}
+.opcion.reco header b{background:var(--baliza)}
+.opcion.reco header h2::after{content:"Recomendada";margin-left:10px;padding:3px 9px;border-radius:99px;background:var(--baliza);color:#fff;font:600 .7rem var(--mono);letter-spacing:.06em;vertical-align:3px}
+.par{display:grid;grid-template-columns:1.35fr 1fr;border-radius:22px;overflow:hidden;box-shadow:0 20px 40px -26px rgba(6,31,50,.5)}
+.oscura{background:radial-gradient(120% 100% at 90% 100%,#0B3352,var(--mar-3) 62%);color:var(--sobre);padding:44px 40px 40px}
+.oscura .ceja{font:500 .7rem var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--luz)}
+.oscura h3{margin:14px 0 18px;color:#fff;font-size:clamp(2.6rem,5.2vw,4.4rem);line-height:.95}
+.oscura p{margin:0;max-width:40ch;color:var(--sobre-suave);font-size:1.05rem}
+.oscura .btn{display:inline-flex;margin-top:22px;padding:14px 22px;border-radius:999px;background:var(--luz);color:var(--mar);text-decoration:none;font-size:.95rem}
+.ola{position:relative;white-space:nowrap;font-style:normal}
+.ola::after{content:"";position:absolute;left:0;right:0;bottom:-.14em;height:.14em;background:var(--luz);
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 8' preserveAspectRatio='none'%3E%3Cpath d='M0 4 Q5 0 10 4 T20 4 T30 4 T40 4' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E") center/100% 100% no-repeat;
+  mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 8' preserveAspectRatio='none'%3E%3Cpath d='M0 4 Q5 0 10 4 T20 4 T30 4 T40 4' fill='none' stroke='black' stroke-width='2.2' stroke-linecap='round' vector-effect='non-scaling-stroke'/%3E%3C/svg%3E") center/100% 100% no-repeat}
+.clara{background:#fff;padding:36px 34px;display:flex;flex-direction:column;gap:14px}
+.clara .tag{align-self:flex-start;font:500 .68rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--baliza)}
+.clara h4{margin:0;font-size:2rem;line-height:1.02}
+.clara p{margin:0;color:var(--suave)}
+.clara .q{margin-top:6px;padding-top:16px;border-top:1px solid #C3D6DC;font-size:1.15rem;line-height:1.3}
+.notas{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:auto;padding-top:16px;border-top:1px solid #C3D6DC;font-size:.88rem;color:var(--suave)}
+.notas strong{display:block;font:500 .68rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--tinta);margin-bottom:4px}
+@media (max-width:860px){.par{grid-template-columns:1fr}.notas{grid-template-columns:1fr}}
+
+/* las cinco parejas */
+.t0 h3,.t0 h4{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;letter-spacing:-.045em}
+.t0 .cuerpo,.t0 .oscura p,.t0 .clara p,.t0 .btn{font-family:"IBM Plex Sans",sans-serif}
+.t0 .btn{font-weight:600}
+
+.t1 h3,.t1 h4{font-family:"Instrument Serif",serif;font-weight:400;letter-spacing:-.02em}
+.t1 h3{font-size:clamp(3rem,6.2vw,5.4rem);line-height:.92}
+.t1 h3 em{font-style:italic;color:var(--luz)}
+.t1 .oscura p,.t1 .clara p,.t1 .btn,.t1 .q{font-family:"Instrument Sans",sans-serif}
+.t1 .btn{font-weight:600}
+.t1 .q{font-family:"Instrument Serif",serif;font-style:italic;font-size:1.45rem}
+
+.t2 h3,.t2 h4{font-family:"Syne",sans-serif;font-weight:800;letter-spacing:-.03em}
+.t2 h3{font-size:clamp(2.3rem,4.6vw,3.9rem);line-height:1}
+.t2 .oscura p,.t2 .clara p,.t2 .btn,.t2 .q{font-family:"Manrope",sans-serif}
+.t2 .btn{font-weight:700}
+.t2 .q{font-weight:600}
+
+.t3 h3,.t3 h4{font-family:"Encode Sans",sans-serif;font-weight:850;font-stretch:125%;letter-spacing:-.035em}
+.t3 h3{font-size:clamp(2.2rem,4.5vw,3.8rem);line-height:.98}
+.t3 .oscura p,.t3 .clara p,.t3 .btn,.t3 .q{font-family:"Encode Sans",sans-serif;font-stretch:100%}
+.t3 .btn{font-weight:700;font-stretch:112%}
+.t3 .q{font-weight:600}
+
+.t4 h3,.t4 h4{font-family:"Fraunces",serif;font-weight:700;font-variation-settings:"SOFT" 100,"opsz" 144;letter-spacing:-.03em}
+.t4 .oscura p,.t4 .clara p,.t4 .btn,.t4 .q{font-family:"Figtree",sans-serif}
+.t4 .btn{font-weight:700}
+.t4 .q{font-family:"Fraunces",serif;font-variation-settings:"SOFT" 100;font-weight:500;font-style:italic}
+</style>
+</head>
+<body>
+<div class="cab">
+  <p>Estela · comparación</p>
+  <h1>Cinco parejas de tipografías</h1>
+  <div>La misma portada y el mismo servicio con cada pareja, con los colores de Estela. La etiqueta en mono (IBM Plex Mono) queda igual en todas para comparar solo títulos y texto.</div>
+</div>
+
+<section class="opcion t0">
+  <header><b>0</b><h2>La de ahora</h2><span>Bricolage Grotesque + IBM Plex Sans</span></header>
+  <div class="par">
+    <div class="oscura"><span class="ceja">Comunicación para emprendimientos y PyMEs · Córdoba</span>
+      <h3>Que se entienda en <em class="ola">tres segundos.</em></h3>
+      <p>Agencia de comunicación para emprendimientos y PyMEs.</p><a class="btn" href="#">Hacer el test de 3 segundos</a></div>
+    <div class="clara"><span class="tag">Tramo 2</span><h4>Perfil y marca</h4>
+      <p>Bio, foto, nombre, destacadas y estilo visual. Todo lo que se juzga antes de leer.</p>
+      <p class="q">«Antes contestaba lo mismo veinte veces por día. Ahora me escriben para comprar.»</p>
+      <div class="notas"><div><strong>Transmite</strong>Moderna y con un toque raro; algo técnica por el cuerpo.</div><div><strong>Ojo</strong>La Q y la g llaman mucho la atención; el cuerpo es frío para una marca «cercana».</div></div></div>
+  </div>
+</section>
+
+<section class="opcion t1 reco">
+  <header><b>1</b><h2>Editorial y contemporánea</h2><span>Instrument Serif + Instrument Sans</span></header>
+  <div class="par">
+    <div class="oscura"><span class="ceja">Comunicación para emprendimientos y PyMEs · Córdoba</span>
+      <h3>Que se entienda en <em>tres segundos.</em></h3>
+      <p>Agencia de comunicación para emprendimientos y PyMEs.</p><a class="btn" href="#">Hacer el test de 3 segundos</a></div>
+    <div class="clara"><span class="tag">Tramo 2</span><h4>Perfil y marca</h4>
+      <p>Bio, foto, nombre, destacadas y estilo visual. Todo lo que se juzga antes de leer.</p>
+      <p class="q">«Antes contestaba lo mismo veinte veces por día. Ahora me escriben para comprar.»</p>
+      <div class="notas"><div><strong>Transmite</strong>Estudio boutique con criterio. La cursiva marca la idea clave sin subrayados.</div><div><strong>Ojo</strong>Necesita tamaños grandes; en botones y textos chicos trabaja la Sans.</div></div></div>
+  </div>
+</section>
+
+<section class="opcion t2">
+  <header><b>2</b><h2>Agencia creativa</h2><span>Syne + Manrope</span></header>
+  <div class="par">
+    <div class="oscura"><span class="ceja">Comunicación para emprendimientos y PyMEs · Córdoba</span>
+      <h3>Que se entienda en <em class="ola">tres segundos.</em></h3>
+      <p>Agencia de comunicación para emprendimientos y PyMEs.</p><a class="btn" href="#">Hacer el test de 3 segundos</a></div>
+    <div class="clara"><span class="tag">Tramo 2</span><h4>Perfil y marca</h4>
+      <p>Bio, foto, nombre, destacadas y estilo visual. Todo lo que se juzga antes de leer.</p>
+      <p class="q">«Antes contestaba lo mismo veinte veces por día. Ahora me escriben para comprar.»</p>
+      <div class="notas"><div><strong>Transmite</strong>Ancha, audaz, de estudio de diseño. Se hace notar.</div><div><strong>Ojo</strong>Es muy usada por agencias y puede verse «de moda»; menos legible en frases largas.</div></div></div>
+  </div>
+</section>
+
+<section class="opcion t3">
+  <header><b>3</b><h2>Hecha en Argentina</h2><span>Encode Sans (ancha para títulos, normal para texto)</span></header>
+  <div class="par">
+    <div class="oscura"><span class="ceja">Comunicación para emprendimientos y PyMEs · Córdoba</span>
+      <h3>Que se entienda en <em class="ola">tres segundos.</em></h3>
+      <p>Agencia de comunicación para emprendimientos y PyMEs.</p><a class="btn" href="#">Hacer el test de 3 segundos</a></div>
+    <div class="clara"><span class="tag">Tramo 2</span><h4>Perfil y marca</h4>
+      <p>Bio, foto, nombre, destacadas y estilo visual. Todo lo que se juzga antes de leer.</p>
+      <p class="q">«Antes contestaba lo mismo veinte veces por día. Ahora me escriben para comprar.»</p>
+      <div class="notas"><div><strong>Transmite</strong>Clara y firme. Diseñada en Rosario por Impallari Type: buena historia para contar.</div><div><strong>Ojo</strong>Más sobria; la personalidad la tiene que poner el resto del diseño.</div></div></div>
+  </div>
+</section>
+
+<section class="opcion t4">
+  <header><b>4</b><h2>Cercana y cálida</h2><span>Fraunces (suave) + Figtree</span></header>
+  <div class="par">
+    <div class="oscura"><span class="ceja">Comunicación para emprendimientos y PyMEs · Córdoba</span>
+      <h3>Que se entienda en <em class="ola">tres segundos.</em></h3>
+      <p>Agencia de comunicación para emprendimientos y PyMEs.</p><a class="btn" href="#">Hacer el test de 3 segundos</a></div>
+    <div class="clara"><span class="tag">Tramo 2</span><h4>Perfil y marca</h4>
+      <p>Bio, foto, nombre, destacadas y estilo visual. Todo lo que se juzga antes de leer.</p>
+      <p class="q">«Antes contestaba lo mismo veinte veces por día. Ahora me escriben para comprar.»</p>
+      <div class="notas"><div><strong>Transmite</strong>Amable, humana, con calidez. Muy «hablás con quien hace el trabajo».</div><div><strong>Ojo</strong>Puede sentirse más de gastronomía o de bienestar que de agencia.</div></div></div>
+  </div>
+</section>
+<div style="height:60px"></div>
+</body>
+</html>

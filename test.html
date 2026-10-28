@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>El test de los 3 segundos · Estela</title>
+<meta name="description" content="Mirá un perfil durante tres segundos y respondé qué vende. Después, revisá tu propia bio en cuatro puntos.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0A2C45">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_AR">
+<meta property="og:site_name" content="Estela">
+<meta property="og:title" content="El test de los 3 segundos · Estela">
+<meta property="og:description" content="Mirá un perfil durante tres segundos y respondé qué vende. Después, revisá tu propia bio en cuatro puntos.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="css/estela.css">
+</head>
+<body>
+<a class="saltar" href="#principal">Saltar al contenido</a>
+<header class="cab">
+  <div class="ancho">
+    <a class="logo" href="index.html" aria-label="Estela, inicio">estela<svg width="30" height="14" viewBox="0 0 30 14" aria-hidden="true"><path d="M1 4 Q5.5 0 10 4 T19 4 T28 4" fill="none" stroke="#0B7388" stroke-width="2.6" stroke-linecap="round"/><path d="M1 10.5 Q5.5 6.5 10 10.5 T19 10.5 T28 10.5" fill="none" stroke="#0B7388" stroke-width="2.6" stroke-linecap="round" opacity=".45"/></svg></a>
+    <nav class="nav" aria-label="Principal"><a href="test.html" aria-current="page">El test</a><a href="servicios.html">Servicios</a><a href="casos.html">Casos</a><a href="valentina.html">Valentina</a></nav>
+    <a class="btn btn-primario chico" href="contacto.html" data-origen="Botón de la cabecera">Pedir diagnóstico</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu-movil">Menú</button>
+  </div>
+  <nav id="menu-movil" class="menu-movil" aria-label="Menú" hidden>
+    <a href="index.html">Inicio</a>
+    <a href="test.html" aria-current="page">El test</a>
+    <a href="servicios.html">Servicios</a>
+    <a href="casos.html">Casos</a>
+    <a href="valentina.html">Valentina</a>
+    <a class="btn btn-primario" href="contacto.html" data-origen="Menú del teléfono">Pedir diagnóstico</a>
+  </nav>
+</header>
+
+<main id="principal" class="oscuro">
+<section class="pagina-cab oscuro">
+  <div class="ancho">
+    <p class="ceja">El test de los 3 segundos</p>
+    <h1>¿Qué vende esta marca?</h1>
+    <p class="intro">Elegí un perfil de ejemplo. Lo vas a ver durante tres segundos, después se tapa y te hacemos una sola pregunta. Es lo mismo que le pasa a un cliente nuevo.</p>
+  </div>
+</section>
+<section class="seccion" style="padding-top:56px">
+  <div class="ancho test">
+    <div>
+      <div class="selector" id="selector" role="group" aria-label="Elegí un perfil de ejemplo"></div>
+      <p class="chiquita">Marcas inventadas para el test.</p>
+      <div class="etapa-test" id="t-inicio"><button class="btn btn-primario" id="tMirar" type="button">Mirar 3 segundos</button></div>
+      <div class="etapa-test" id="t-mirando" hidden><p class="chiquita" aria-live="polite">Mirá con atención.</p></div>
+      <div class="etapa-test" id="t-pregunta" hidden>
+        <h3>¿Qué vende esta marca?</h3>
+        <div class="opciones" id="tOpciones" role="radiogroup" aria-label="Opciones"></div>
+      </div>
+      <div class="etapa-test" id="t-resultado" hidden>
+        <p class="veredicto" id="tVeredicto" tabindex="-1"></p>
+        <p id="tMensaje"></p>
+        <div class="comparar">
+          <div><small>Lo que decía la bio</small><span id="tAntes"></span></div>
+          <div class="despues"><small>Cómo la escribiría Estela</small><span id="tDespues"></span></div>
+        </div>
+        <div class="botonera">
+          <a class="btn btn-primario" href="contacto.html">Que Valentina mire mi perfil</a>
+          <button class="btn btn-borde" type="button" id="tOtra">Probar otra marca</button>
+        </div>
+      </div>
+
+      <div class="revisor">
+        <h2>¿Y tu bio?</h2>
+        <p class="intro">Pegá el texto de tu perfil. Revisamos cuatro cosas que un desconocido necesita encontrar enseguida.</p>
+        <label for="bio" class="chiquita" style="display:block;margin-top:18px">Bio de tu Instagram</label>
+        <textarea id="bio" placeholder="Ejemplo: Velas de soja para tu casa. Hechas en Villa Allende. Pedidos por WhatsApp."></textarea>
+        <button class="btn btn-borde" type="button" id="bioRevisar">Revisar mi bio</button>
+        <div id="bioResultado" aria-live="polite"></div>
+        <p class="chiquita" style="margin-top:16px">Es una revisión rápida de cuatro puntos. En el diagnóstico, Valentina mira tu perfil completo.</p>
+      </div>
+    </div>
+    <div class="escenario">
+      <div class="telefono" id="telTest">
+        <div class="anillo" id="anilloTest" hidden aria-hidden="true"><svg viewBox="0 0 44 44"><circle class="pista" cx="22" cy="22" r="19"/><circle class="arco" cx="22" cy="22" r="19"/></svg><b>3</b></div>
+        <div id="perfilTest"></div>
+        <div class="velo" id="veloTest" hidden>Se acabó el tiempo.</div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="pie">
+  <div class="ancho">
+    <div class="pie-grilla">
+      <div>
+        <a class="logo" href="index.html" aria-label="Estela, inicio">estela<svg width="30" height="14" viewBox="0 0 30 14" aria-hidden="true"><path d="M1 4 Q5.5 0 10 4 T19 4 T28 4" fill="none" stroke="#62D6D0" stroke-width="2.6" stroke-linecap="round"/><path d="M1 10.5 Q5.5 6.5 10 10.5 T19 10.5 T28 10.5" fill="none" stroke="#62D6D0" stroke-width="2.6" stroke-linecap="round" opacity=".45"/></svg></a>
+        <p style="margin-top:14px;max-width:36ch">Comunicación para emprendimientos y PyMEs. Ordenamos lo que tu marca dice para que se entienda en tres segundos.</p>
+        <p class="coord">31°25′ S · 64°11′ O · <span data-dato="ciudad">Córdoba</span>, Argentina</p>
+      </div>
+      <div>
+        <h2>Páginas</h2>
+        <ul>
+          <li><a href="test.html">El test de 3 segundos</a></li>
+          <li><a href="servicios.html">Servicios y precios</a></li>
+          <li><a href="casos.html">Casos</a></li>
+          <li><a href="valentina.html">Quién está detrás</a></li>
+          <li><a href="contacto.html">Pedir diagnóstico</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contacto</h2>
+        <ul>
+          <li><a data-wa href="contacto.html">WhatsApp · <span data-dato="wa-num">388 437-7035</span></a></li>
+          <li><a data-mail href="contacto.html" data-dato="mail-txt">Mail</a></li>
+          <li><a data-ig href="#">Instagram</a></li>
+          <li><a href="privacidad.html">Política de privacidad</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="nota"><span>© <span data-anio>2026</span> Estela</span><span>Proyecto académico · Marketing Digital, Universidad Siglo 21 · Grupo Deriva. Las marcas, los casos y los testimonios son ilustrativos.</span></div>
+  </div>
+</footer>
+<script src="js/datos.js"></script>
+<script src="js/estela.js"></script>
+</body>
+</html>
