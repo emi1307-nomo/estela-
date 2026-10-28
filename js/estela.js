@@ -140,12 +140,58 @@
     document.addEventListener('visibilitychange', function () { if (document.hidden) prender(false); else { var r = faro.getBoundingClientRect(); prender(r.bottom > 0 && r.top < innerHeight); } });
   })();
 
-  /* ---------- la regla de los tres segundos: se recorre en 3 s reales ---------- */
+  /* ---------- la regla de los tres segundos: la línea va del primer punto al último y se pinta en 3 s reales ---------- */
   $$('.regla').forEach(function (r) {
+    var puntos = $$('.punto', r), linea = $('.regla-linea', r);
+    function ubicar() {
+      if (puntos.length < 2 || !linea) return;
+      var base = r.getBoundingClientRect(), a = puntos[0].getBoundingClientRect(), z = puntos[puntos.length - 1].getBoundingClientRect();
+      var ax = a.left + a.width / 2 - base.left, ay = a.top + a.height / 2 - base.top;
+      var zx = z.left + z.width / 2 - base.left, zy = z.top + z.height / 2 - base.top;
+      var vertical = Math.abs(zy - ay) > Math.abs(zx - ax);   // en el celu los pasos van uno abajo del otro
+      r.classList.toggle('vertical', vertical);
+      linea.style.setProperty('--lx', (vertical ? ax - 1 : ax) + 'px');
+      linea.style.setProperty('--ly', (vertical ? ay : ay - 1) + 'px');
+      linea.style.setProperty('--lw', (vertical ? 2 : zx - ax) + 'px');
+      linea.style.setProperty('--lh', (vertical ? zy - ay : 2) + 'px');
+    }
+    ubicar();
+    addEventListener('resize', ubicar);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(ubicar);
     if (quieto || !('IntersectionObserver' in window)) { r.classList.add('corre'); return; }
-    var o = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { r.classList.add('corre'); o.disconnect(); } }, { threshold: .6 });
+    var o = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { ubicar(); r.classList.add('corre'); o.disconnect(); } }, { threshold: .5 });
     o.observe(r);
   });
+
+  /* ---------- cómo trabajamos: las cartas pasan solas hacia el costado (y se pueden deslizar) ---------- */
+  var mazo = $('.cartas');
+  if (mazo) (function () {
+    var cartas = $$('.carta', mazo), puntos = $$('.cartas-puntos i'), actual = 0, quietoHasta = 0, visible = false, encima = false;
+    function paso() { return cartas.length > 1 ? cartas[1].offsetLeft - cartas[0].offsetLeft : mazo.clientWidth; }
+    function alFinal() { return mazo.scrollLeft + mazo.clientWidth >= mazo.scrollWidth - 4; }
+    function marcar() { puntos.forEach(function (p, i) { p.classList.toggle('activo', i === actual); }); }
+    function ir(n) {
+      actual = (n + cartas.length) % cartas.length;
+      mazo.scrollTo({ left: cartas[actual].offsetLeft - cartas[0].offsetLeft, behavior: quieto ? 'auto' : 'smooth' });
+      marcar();
+    }
+    mazo.addEventListener('scroll', function () {
+      var n = alFinal() ? cartas.length - 1 : Math.round(mazo.scrollLeft / paso());
+      n = Math.max(0, Math.min(cartas.length - 1, n));
+      if (n !== actual) { actual = n; marcar(); }
+    }, { passive: true });
+    function tocaron() { quietoHasta = Date.now() + 9000; }     // si la persona las mueve, se quedan quietas un rato
+    $$('.flecha').forEach(function (b) { b.addEventListener('click', function () { tocaron(); ir(alFinal() && +b.getAttribute('data-dir') > 0 ? 0 : actual + +b.getAttribute('data-dir')); }); });
+    ['pointerdown', 'wheel', 'touchstart', 'keydown'].forEach(function (ev) { mazo.addEventListener(ev, tocaron, { passive: true }); });
+    mazo.addEventListener('pointerenter', function () { encima = true; });
+    mazo.addEventListener('pointerleave', function () { encima = false; });
+    if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { visible = es[0].isIntersecting; }, { threshold: .4 }).observe(mazo);
+    if (!quieto) setInterval(function () {
+      if (!visible || encima || document.hidden || Date.now() < quietoHasta) return;
+      ir(alFinal() ? 0 : actual + 1);
+    }, 3800);
+    marcar();
+  })();
 
   /* ---------- perfiles de Instagram (marcas del test y casos) ---------- */
   var GRILLA_ANTES = ['#c9a27a', '#3b6ea5', '#d94f70', '#e8d44d', '#6f9c6a', '#8e5bbf'];

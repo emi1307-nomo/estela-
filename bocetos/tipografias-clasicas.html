@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Tipografías clásicas para Estela</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Libre+Franklin:wght@400;500;600;700&family=EB+Garamond:ital,wght@0,400..700;1,400..700&family=Source+Sans+3:wght@400;600;700&family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@400;500;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&display=swap">
+<style>
+:root{--mar:#0A2C45;--mar-3:#061F32;--espuma:#F0F6F7;--baliza:#0B7388;--luz:#62D6D0;--tinta:#0A2C45;--suave:#44667A;--sobre:#E8F3F5;--sobre-suave:#9DBFCC;--mono:"IBM Plex Mono",monospace}
+*{box-sizing:border-box}
+body{margin:0;background:var(--espuma);color:var(--tinta);font:400 16px/1.55 "Source Sans 3",system-ui,sans-serif;font-synthesis:none}
+.cab{max-width:1240px;margin:0 auto;padding:48px 24px 20px}
+.cab p{margin:0;font:500 .74rem var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--baliza)}
+.cab h1{margin:10px 0 8px;font:700 clamp(2rem,4.6vw,3.2rem)/1.05 "Libre Baskerville",serif;letter-spacing:-.02em}
+.cab div{max-width:64ch;color:var(--suave)}
+.opcion{max-width:1240px;margin:28px auto;padding:0 24px}
+.opcion header{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:12px}
+.opcion header b{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--mar);color:#fff;font:600 .95rem var(--mono)}
+.opcion header h2{margin:0;font:700 1.25rem/1.2 "Source Sans 3",sans-serif}
+.opcion header span{font:400 .82rem var(--mono);color:var(--suave)}
+.opcion.reco header b{background:var(--baliza)}
+.opcion.reco header h2::after{content:"Recomendada";margin-left:10px;padding:3px 9px;border-radius:99px;background:var(--baliza);color:#fff;font:600 .7rem var(--mono);letter-spacing:.06em;vertical-align:3px}
+.par{display:grid;grid-template-columns:1.35fr 1fr;border-radius:22px;overflow:hidden;box-shadow:0 20px 40px -26px rgba(6,31,50,.5)}
+.oscura{background:radial-gradient(120% 100% at 90% 100%,#0B3352,var(--mar-3) 62%);color:var(--sobre);padding:44px 40px 40px}
+.oscura .ceja{font:500 .7rem var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--luz)}
+.oscura h3{margin:14px 0 18px;color:#fff;font-size:clamp(2.3rem,4.6vw,3.9rem);line-height:1.02}
+.oscura h3 em{color:var(--luz)}
+.oscura p{margin:0;max-width:40ch;color:var(--sobre-suave);font-size:1.05rem}
+.oscura .btn{display:inline-flex;margin-top:22px;padding:14px 22px;border-radius:999px;background:var(--luz);color:var(--mar);text-decoration:none;font-size:.95rem}
+.clara{background:#fff;padding:36px 34px;display:flex;flex-direction:column;gap:14px}
+.clara .tag{align-self:flex-start;font:500 .68rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--baliza)}
+.clara h4{margin:0;font-size:2rem;line-height:1.05}
+.clara p{margin:0;color:var(--suave)}
+.clara .q{margin-top:6px;padding-top:16px;border-top:1px solid #C3D6DC;font-size:1.15rem;line-height:1.35;color:var(--tinta)}
+.notas{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:auto;padding-top:16px;border-top:1px solid #C3D6DC;font-size:.88rem;color:var(--suave)}
+.notas strong{display:block;font:500 .68rem var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--tinta);margin-bottom:4px}
+@media (max-width:860px){.par{grid-template-columns:1fr}.notas{grid-template-columns:1fr}}
+
+/* A · Libre Baskerville + Libre Franklin */
+.ta h3,.ta h4{font-family:"Libre Baskerville",serif;font-weight:400;letter-spacing:-.02em}
+.ta h3{font-size:clamp(2.1rem,4.2vw,3.5rem);line-height:1.08}
+.ta h3 em,.ta .clara p.q{font-style:italic}
+.ta .oscura p,.ta .clara p,.ta .btn{font-family:"Libre Franklin",sans-serif}
+.ta .btn{font-weight:600}
+.ta .clara p.q{font-family:"Libre Baskerville",serif;font-size:1.05rem}
+
+/* B · EB Garamond + Source Sans 3 */
+.tb h3,.tb h4{font-family:"EB Garamond",serif;font-weight:500;letter-spacing:-.015em}
+.tb h3{font-size:clamp(2.6rem,5.2vw,4.4rem);line-height:1}
+.tb h3 em,.tb .clara p.q{font-style:italic}
+.tb .oscura p,.tb .clara p,.tb .btn{font-family:"Source Sans 3",sans-serif}
+.tb .btn{font-weight:600}
+.tb .clara p.q{font-family:"EB Garamond",serif;font-size:1.35rem}
+
+/* C · DM Serif Display + DM Sans */
+.tc h3,.tc h4{font-family:"DM Serif Display",serif;font-weight:400;letter-spacing:-.01em}
+.tc h3{font-size:clamp(2.4rem,4.8vw,4rem);line-height:1.02}
+.tc h3 em,.tc .clara p.q{font-style:italic}
+.tc .oscura p,.tc .clara p,.tc .btn{font-family:"DM Sans",sans-serif}
+.tc .btn{font-weight:500}
+.tc .clara p.q{font-family:"DM Serif Display",serif;font-size:1.3rem}
+
+/* D · Source Serif 4 + Source Sans 3 */
+.td h3,.td h4{font-family:"Source Serif 4",serif;font-weight:600;font-optical-sizing:auto;letter-spacing:-.02em}
+.td h3{font-size:clamp(2.3rem,4.6vw,3.9rem);line-height:1.04}
+.td h3 em,.td .clara p.q{font-style:italic}
+.td h3 em{font-weight:500}
+.td .oscura p,.td .clara p,.td .btn{font-family:"Source Sans 3",sans-serif}
+.td .btn{font-weight:600}
+.td .clara p.q{font-family:"Source Serif 4",serif;font-size:1.2rem}
+
+/* E · Libre Franklin sola (clásica sin serifa) */
+.te h3,.te h4{font-family:"Libre Franklin",sans-serif;font-weight:700;letter-spacing:-.035em}
+.te h3{font-size:clamp(2.2rem,4.4vw,3.7rem);line-height:1.02}
+.te h3 em{font-style:normal}
+.te .oscura p,.te .clara p,.te .btn,.te .clara p.q{font-family:"Libre Franklin",sans-serif}
+.te .btn{font-weight:600}
+.te .clara p.q{font-weight:500}
+</style>
+</head>
+<body>
+<div class="cab">
+  <p>Estela · segunda comparación</p>
+  <h1>Tipografías clásicas</h1>
+  <div>Proporciones parejas, lectura tranquila. La misma portada y el mismo servicio con cada opción, en los colores de Estela. «Tres segundos» va en el color turquesa (en cursiva en las que tienen serifa).</div>
+</div>
+
+<section class="opcion ta reco">
+  <header><b>A</b><h2>Clásica de libro</h2><span>Libre Baskerville + Libre Franklin</span></header>
+  <div class="par">
+    <div class="oscura"><span class="ceja">Comunicación para emprendimientos y PyMEs · Córdoba</span>
+      <h3>Que se entienda en <em>tres segundos.</em></h3>
+      <p>Agencia de comunicación para emprendimientos y PyMEs.</p><a class="btn" href="#">Hacer el test de 3 segundos</a></div>
+    <div class="clara"><span class="tag">Tramo 2</span><h4>Perfil y marca</h4>
+      <p>Bio, foto, nombre, destacadas y estilo visual. Todo lo que se juzga antes de leer.</p>
+      <p class="q">«Antes contestaba lo mismo veinte veces por día. Ahora me escriben para comprar.»</p>
+      <div class="notas"><div><strong>Transmite</strong>Seriedad y oficio, con calidez. Muy ordenada y fácil de leer.</div><div><strong>Dato</strong>Las dos son de Pablo Impallari, diseñador argentino.</div></div></div>
+  </div>
+</section>
+
+<section class="opcion tb">
+  <header><b>B</b><h2>Elegante</h2><span>EB Garamond + Source Sans 3</span></header>
+  <div class="par">
+    <div class="oscura"><span class="ceja">Comunicación para emprendimientos y PyMEs · Córdoba</span>
+      <h3>Que se entienda en <em>tres segundos.</em></h3>
+      <p>Agencia de comunicación para emprendimientos y PyMEs.</p><a class="btn" href="#">Hacer el test de 3 segundos</a></div>
+    <div class="clara"><span class="tag">Tramo 2</span><h4>Perfil y marca</h4>
+      <p>Bio, foto, nombre, destacadas y estilo visual. Todo lo que se juzga antes de leer.</p>
+      <p class="q">«Antes contestaba lo mismo veinte veces por día. Ahora me escriben para comprar.»</p>
+      <div class="notas"><div><strong>Transmite</strong>Refinada y literaria, la más «de siempre».</div><div><strong>Ojo</strong>Es delicada: en tamaños chicos o en celulares viejos pierde fuerza.</div></div></div>
+  </div>
+</section>
+
+<section class="opcion tc">
+  <header><b>C</b><h2>Clásica con presencia</h2><span>DM Serif Display + DM Sans</span></header>
+  <div class="par">
+    <div class="oscura"><span class="ceja">Comunicación para emprendimientos y PyMEs · Córdoba</span>
+      <h3>Que se entienda en <em>tres segundos.</em></h3>
+      <p>Agencia de comunicación para emprendimientos y PyMEs.</p><a class="btn" href="#">Hacer el test de 3 segundos</a></div>
+    <div class="clara"><span class="tag">Tramo 2</span><h4>Perfil y marca</h4>
+      <p>Bio, foto, nombre, destacadas y estilo visual. Todo lo que se juzga antes de leer.</p>
+      <p class="q">«Antes contestaba lo mismo veinte veces por día. Ahora me escriben para comprar.»</p>
+      <div class="notas"><div><strong>Transmite</strong>Firme y segura, con contraste marcado. Se ve bien grande.</div><div><strong>Ojo</strong>Muy usada; tiene un solo grosor para títulos.</div></div></div>
+  </div>
+</section>
+
+<section class="opcion td">
+  <header><b>D</b><h2>Sobria y prolija</h2><span>Source Serif 4 + Source Sans 3</span></header>
+  <div class="par">
+    <div class="oscura"><span class="ceja">Comunicación para emprendimientos y PyMEs · Córdoba</span>
+      <h3>Que se entienda en <em>tres segundos.</em></h3>
+      <p>Agencia de comunicación para emprendimientos y PyMEs.</p><a class="btn" href="#">Hacer el test de 3 segundos</a></div>
+    <div class="clara"><span class="tag">Tramo 2</span><h4>Perfil y marca</h4>
+      <p>Bio, foto, nombre, destacadas y estilo visual. Todo lo que se juzga antes de leer.</p>
+      <p class="q">«Antes contestaba lo mismo veinte veces por día. Ahora me escriben para comprar.»</p>
+      <div class="notas"><div><strong>Transmite</strong>Orden, claridad, confianza. Tiene varios grosores, así que se puede usar seminegrita.</div><div><strong>Ojo</strong>Menos personalidad: la pone el resto del diseño.</div></div></div>
+  </div>
+</section>
+
+<section class="opcion te">
+  <header><b>E</b><h2>Clásica sin serifa</h2><span>Libre Franklin (todo)</span></header>
+  <div class="par">
+    <div class="oscura"><span class="ceja">Comunicación para emprendimientos y PyMEs · Córdoba</span>
+      <h3>Que se entienda en <em>tres segundos.</em></h3>
+      <p>Agencia de comunicación para emprendimientos y PyMEs.</p><a class="btn" href="#">Hacer el test de 3 segundos</a></div>
+    <div class="clara"><span class="tag">Tramo 2</span><h4>Perfil y marca</h4>
+      <p>Bio, foto, nombre, destacadas y estilo visual. Todo lo que se juzga antes de leer.</p>
+      <p class="q">«Antes contestaba lo mismo veinte veces por día. Ahora me escriben para comprar.»</p>
+      <div class="notas"><div><strong>Transmite</strong>Directa y confiable, estilo cartel clásico. Lo más «se entiende rápido».</div><div><strong>Ojo</strong>Sin serifa se pierde el aire editorial.</div></div></div>
+  </div>
+</section>
+<div style="height:60px"></div>
+</body>
+</html>
