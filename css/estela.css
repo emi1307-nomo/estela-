@@ -405,6 +405,7 @@ a.parada:hover h3{text-decoration:underline;text-decoration-thickness:1px;text-u
 .retrato{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:64px;align-items:center}
 .ojo-de-buey{position:relative;width:min(340px,100%);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 50% 40%,var(--mar-2),var(--mar-3));
   border:14px solid var(--mar);box-shadow:inset 0 0 0 3px var(--linea-mar),0 30px 60px -30px rgba(6,31,50,.6);display:grid;place-items:center;overflow:hidden}
+.ojo-de-buey img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%}
 .ojo-de-buey span{font:400 italic 7.5rem/1 var(--display);color:var(--sobre-mar)}
 .ojo-de-buey svg{position:absolute;left:0;right:0;bottom:16%;width:100%;opacity:.8}
 .ojo-de-buey small{position:absolute;bottom:9%;font:600 .66rem var(--etiqueta);letter-spacing:.14em;text-transform:uppercase;color:var(--sobre-mar-suave)}
@@ -494,6 +495,10 @@ a.parada:hover h3{text-decoration:underline;text-decoration-thickness:1px;text-u
 /* ---------- contacto ---------- */
 .contacto{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:64px;align-items:start}
 .contacto-titulo{font-size:clamp(2.2rem,4.6vw,3.6rem);line-height:1.1}
+.quien{display:flex;align-items:center;gap:16px;margin-top:28px}
+.quien img{width:64px;height:64px;border-radius:50%;object-fit:cover;flex:none;box-shadow:0 0 0 3px var(--mar),0 0 0 5px var(--luz)}
+.quien p{font-size:.95rem;color:var(--sobre-mar-suave);line-height:1.45}
+.quien b{display:block;color:#fff;font-weight:600}
 .contacto ul.flechas{list-style:none;padding:0;margin:28px 0 0;display:grid;gap:10px}
 .contacto ul.flechas li{position:relative;padding-left:28px}
 .contacto ul.flechas li::before{content:"→";position:absolute;left:0;color:var(--baliza)}

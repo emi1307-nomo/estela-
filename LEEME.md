@@ -19,7 +19,6 @@ Trabajo práctico de Marketing Digital (Universidad Siglo 21), grupo Deriva.
 4. Los eventos `test_completado`, `bio_revisada`, `horario_elegido`, `formulario_enviado` y `guia_solicitada` quedan en `window.dataLayer`, listos para Google Tag Manager o Analytics.
 
 ## Pendiente
-- Foto de Valentina (hoy hay un ojo de buey con una "V").
 - Instagram de Estela y dominio propio (`estela.ar` es de ejemplo).
 - Confirmar ciudad, horarios, compromiso de respuesta y precios.
 - Las marcas, los casos y los testimonios son inventados para el TP (así lo aclara el pie de cada página).
