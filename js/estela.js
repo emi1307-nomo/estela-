@@ -77,13 +77,16 @@
       var m = mar.getBoundingClientRect(), l = lampara.getBoundingClientRect();
       var ox = l.left + l.width / 2 - m.left, oy = l.top + l.height / 2 - m.top, angs = [];
       mar.style.setProperty('--ox', ox + 'px'); mar.style.setProperty('--oy', oy + 'px');
+      var lejos = 0;
       [fv, fc].forEach(function (el) {
         var b = el.getBoundingClientRect();
         [[b.left, b.top], [b.right, b.top], [b.left, b.bottom], [b.right, b.bottom]].forEach(function (p) {
+          lejos = Math.max(lejos, Math.hypot(p[0] - m.left - ox, p[1] - m.top - oy));
           var th = (Math.atan2(p[0] - m.left - ox, -(p[1] - m.top - oy)) * 180 / Math.PI + 360) % 360;
           angs.push((th - 270 + 360) % 360);
         });
       });
+      mar.style.setProperty('--r1', Math.round(lejos * .5) + 'px'); mar.style.setProperty('--r2', Math.round(lejos * 1.06) + 'px');
       desde = Math.max(0, Math.min.apply(null, angs) - 3);
       hasta = Math.min(150, Math.max.apply(null, angs) + 3);
     }
@@ -248,6 +251,7 @@
       perfil.innerHTML = perfilHTML(p, 'antes');
       tel.classList.remove('tapado'); velo.hidden = true;
       etapa('mirando');
+      if (innerWidth <= 960) tel.scrollIntoView({ behavior: quieto ? 'auto' : 'smooth', block: 'center' });
       medir('test_iniciado', { marca: p.nombre });
       cortar = cuentaRegresiva(anillo, 3, function () {
         anillo.hidden = true; tel.classList.add('tapado'); velo.hidden = false; velo.textContent = 'Se acabó el tiempo.';
@@ -256,7 +260,8 @@
           return '<label><input type="radio" name="tq" value="' + (o.ok ? 'si' : 'no') + '"><span>' + esc(o.t) + '</span></label>';
         }).join('');
         etapa('pregunta');
-        var primera = $('#tOpciones input'); if (primera) primera.focus();
+        var primera = $('#tOpciones input'); if (primera) primera.focus({ preventScroll: true });
+        $('#t-pregunta').scrollIntoView({ behavior: quieto ? 'auto' : 'smooth', block: 'nearest' });
       });
     });
     $('#tOpciones').addEventListener('change', function (e) {

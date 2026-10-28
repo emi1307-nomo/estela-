@@ -104,26 +104,30 @@ img,svg{display:block;max-width:100%}
 .vagas{-webkit-mask:conic-gradient(from 270deg at var(--ox) var(--oy),transparent calc(var(--av) - 1deg),#000 calc(var(--av) + 4deg));
   mask:conic-gradient(from 270deg at var(--ox) var(--oy),transparent calc(var(--av) - 1deg),#000 calc(var(--av) + 4deg));transition:opacity .7s}
 .haz{background:conic-gradient(from 270deg at var(--ox) var(--oy),transparent calc(var(--ac) - 22deg),rgba(98,214,208,.10) calc(var(--ac) - 6deg),
-  rgba(205,248,245,.30) var(--ac),transparent calc(var(--ac) + .6deg));opacity:var(--haz,0);transition:opacity .5s}
+  rgba(205,248,245,.30) var(--ac),transparent calc(var(--ac) + .6deg));opacity:var(--haz,0);transition:opacity .6s;
+  -webkit-mask:radial-gradient(circle at var(--ox) var(--oy),#000 0,#000 var(--r1,60%),transparent var(--r2,95%));
+  mask:radial-gradient(circle at var(--ox) var(--oy),#000 0,#000 var(--r1,60%),transparent var(--r2,95%))}
 .torre{position:absolute;right:max(40px,6%);bottom:0;width:clamp(48px,4.4vw,78px);height:auto;overflow:visible}
 .torre .lampara{transform-box:fill-box;transform-origin:center}
 .faro.encendido .torre .lampara{animation:destello 3s steps(1) infinite}
 @keyframes destello{0%,8%{opacity:1}9%,100%{opacity:.45}}
-.lectura{position:absolute;right:calc(max(40px,6%) + clamp(64px,5.6vw,100px));bottom:30px;text-align:right;font:500 .74rem/1.5 var(--mono);letter-spacing:.06em;color:var(--sobre-mar-suave)}
-.lectura b{display:block;font:400 1.4rem/1.15 var(--display);letter-spacing:0;color:#fff;text-transform:none}
+.lectura{position:absolute;right:calc(max(40px,6%) + clamp(64px,5.6vw,100px));bottom:76px;text-align:right;font:500 .74rem/1.5 var(--mono);letter-spacing:.06em;color:var(--sobre-mar-suave)}
+.lectura b{display:block;font:400 italic 1.45rem/1.15 var(--display);letter-spacing:0;color:#fff;text-transform:none}
 .olas-pie{position:absolute;left:0;right:0;bottom:0;height:60px;z-index:1;opacity:.5}
 
 @media (max-width:900px){
   .faro{min-height:0;justify-content:flex-start}
   .faro::before{display:none}
   .faro .ancho{padding-block:44px 8px}
+  .ceja-ciudad{display:block}
+  .ceja-ciudad .sep{display:none}
   .mar-frases{position:relative;width:100%;flex:none}
-  .mar-frases{--px:6%;--py:20%;height:320px}
+  .mar-frases{--px:6%;--py:17%;height:360px}
   .claras .frase{max-width:11ch;font-size:1.8rem}
   .vagas .frase{font-size:1rem}
   .torre{right:18px;width:46px}
   .mar-frases{--ox:calc(100% - 38px)}
-  .lectura{right:76px;bottom:20px}
+  .lectura{right:80px;bottom:72px}
 }
 
 /* ---------- regla de los tres segundos ---------- */
@@ -346,7 +350,18 @@ a.tramo:hover h3{color:var(--baliza)}
 .chequeos span.d{color:var(--sobre-mar-suave);font-size:.94rem}
 .puntaje{font:400 2rem var(--display);margin-top:18px;color:#fff}
 .test .escenario{position:sticky;top:calc(var(--cab) + 32px);display:flex;justify-content:center}
-@media (max-width:960px){.test{grid-template-columns:1fr;gap:36px}.test .escenario{position:static;order:-1}}
+/* en el celu: marcas, teléfono y botón en una misma pantalla, y abajo las preguntas */
+@media (max-width:960px){
+  .test{display:flex;flex-direction:column;gap:0}
+  .test > .test-col{display:contents}
+  .test .selector{order:1;margin-top:0}
+  .test .marcas{order:2}
+  .test .escenario{order:3;position:static;margin:20px 0 4px}
+  .test .etapa-test{order:4}
+  .test .revisor{order:5}
+  .test .telefono{width:min(250px,78vw);border-radius:28px;padding:12px 12px 14px}
+  .test .telefono .bio{font-size:.8rem}
+}
 @media (max-width:560px){.comparar{grid-template-columns:1fr}}
 
 /* ---------- contacto ---------- */
